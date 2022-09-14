@@ -1,15 +1,15 @@
 module Scene
   class Select < Scene::Base
     def initialize
-      @stage_button_image_active = Image.new(240, 100, C_BLUE)
-      @stage_button_image_nonactive = Image.new(240, 100, [41, 42, 48])
+      @stage_button_image_active = Image.new(360, 120, C_BLUE)
+      @stage_button_image_nonactive = Image.new(360, 120, [41, 42, 48])
       @buttons = [
-        Sprite.new(150, 200, @stage_button_image_active),
-        Sprite.new(150, 350, @stage_button_image_active),
-        Sprite.new(150, 500, @stage_button_image_active),
-        Sprite.new(450, 200, @stage_button_image_active),
-        Sprite.new(450, 350, @stage_button_image_active),
-        Sprite.new(450, 500, @stage_button_image_active),
+        Sprite.new(Window.width / 3 - @stage_button_image_active.width / 2, Window.height / 5 * 2 - @stage_button_image_active.width / 2 , @stage_button_image_active),
+        Sprite.new(Window.width / 3 - @stage_button_image_active.width / 2, Window.height / 5 * 3 - @stage_button_image_active.width / 2, @stage_button_image_active),
+        Sprite.new(Window.width / 3 - @stage_button_image_active.width / 2, Window.height / 5 * 4 - @stage_button_image_active.width / 2, @stage_button_image_active),
+        Sprite.new(Window.width / 3 * 2 - @stage_button_image_active.width / 2, Window.height / 5 * 2 - @stage_button_image_active.width / 2, @stage_button_image_active),
+        Sprite.new(Window.width / 3 * 2 - @stage_button_image_active.width / 2, Window.height / 5 * 3 - @stage_button_image_active.width / 2, @stage_button_image_active),
+        Sprite.new(Window.width / 3 * 2 - @stage_button_image_active.width / 2, Window.height / 5 * 4 - @stage_button_image_active.width / 2, @stage_button_image_active),
       ]
 
       @finish = false
