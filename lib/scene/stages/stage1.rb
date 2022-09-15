@@ -1,26 +1,17 @@
 module Scene
-    class Stage1 < Scene::Base
+    class Stage1 < Scene::Stage
         include Fixture::Stage1
         def initialize
             @player = Player.new
             @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")
-            @game_play = false
-            @is_finish = false
-            @next_scene = nil
-            @enemies = []
             super
         end
 
         def update
             super
-            if @game_play
-                game
-            else
-                start_scene
-            end
         end
 
-        def start_scene
+        def startgi
             if @count > 60
                 background_move_draw_1
                 Window.draw(Window.width / 2 - @carrier.width / 2, (@count - 60) * 4 - (@carrier.height - 300)  / 2, @carrier)
@@ -32,7 +23,7 @@ module Scene
                     @player.y = Window.height + 50
                     @player.y -= (@count - 600)
                     if @player.y == Window.height - 60
-                        @game_play = true
+                        @scene = :game
                     end
                 end
             else
@@ -69,22 +60,26 @@ module Scene
                 end
             end
 
+            if @player.health <= 0
+                @scene = :end_scene
+            end
         end
 
-        def end
+        def end_scene
+            super
             background_move_draw_2
             @player.y -= 5
             if @player.y < -10
                 @is_finish = true
             end
         end
+
         def finish?
-            return true if Input.key_down?(K_ESCAPE)
-            @is_finish
+            super
         end
 
         def next_scene
-            @next_scene
+            super
         end
     end
 end

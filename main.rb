@@ -5,14 +5,15 @@ Dir[
   'lib/scene/*.rb',
   'lib/scene/stages/*.rb',
   'lib/fixtures/*.rb',
-  'lib/fixtures/bullet.rb'
+  'lib/fixtures/bullet.rb',
+  'lib/fixtures/stage2/*.rb',
+  'lib/fixtures/stage3/*.rb',
+
 ].each do |file|
   require_relative file
 end
 $PATH = File.dirname(__FILE__)
-$mouse = Mouse.new
 scenemanager = SceneManager.new
 Window.loop do
-  $mouse.update
   scenemanager.update
 end

@@ -1,6 +1,7 @@
 module Scene
   class Opening < Scene::Base
     def initialize
+      super
       @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
       @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
 
@@ -14,16 +15,16 @@ module Scene
       @Select_check = false
       @Exit_check = false
       @next_scene = nil
-      @finish = false
     end
 
     def update
+      super
       @Select.draw
       Window.draw_font(Window.width / 2 - 120, Window.height / 2 - 30, "GameStart!", Font.new(56))
-      if @Select === $mouse && !@Select_check
+      if @Select === @mouse && !@Select_check
         @Select_check = true
         @touch_sound.play
-      elsif @Select === $mouse && @Select_check
+      elsif @Select === @mouse && @Select_check
         @Select_check = true
       else
         @Select_check = false
@@ -31,29 +32,28 @@ module Scene
 
       @Exit.draw
       Window.draw_font(Window.width / 2 - 40, Window.height / 2 + 120, "Exit", Font.new(48))
-      if @Exit === $mouse && !@Exit_check
+      if @Exit === @mouse && !@Exit_check
         @Exit_check = true
         @touch_sound.play
-      elsif @Exit === $mouse && @Exit_check
+      elsif @Exit === @mouse && @Exit_check
         @Exit_check = true
       else
         @Exit_check = false
       end
 
       if Input.mouse_push?(M_LBUTTON)
-        if $mouse === @Select
+        if @mouse === @Select
           @next_scene = Scene::Select.new
-          @finish = true
-        elsif $mouse === @Exit_check
+          @is_finish = true
+        elsif @mouse === @Exit_check
           @next_scene = nil
-          @finish = true
+          @is_finish = true
         end
       end
     end
 
     def finish?
-      return true if Input.key_push?(K_ESCAPE)
-      @finish
+      @is_finish
     end
 
     def next_scene

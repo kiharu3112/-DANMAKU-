@@ -1,6 +1,7 @@
 module Scene
   class Select < Scene::Base
     def initialize
+      super
       @stage_button_image_active = Image.new(360, 120, C_BLUE)
       @stage_button_image_nonactive = Image.new(360, 120, [41, 42, 48])
       @buttons = [
@@ -12,18 +13,17 @@ module Scene
         Sprite.new(Window.width / 3 * 2 - @stage_button_image_active.width / 2, Window.height / 5 * 4 - @stage_button_image_active.width / 2, @stage_button_image_active),
       ]
 
-      @finish = false
       @button_checker = Array.new(6, false)
       @button_touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
       @button_click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
-      @can_play_stage = 0
-      @next_scene = nil
+      @can_play_stage = 3
     end
 
     def update
+      super
       Window.draw_font(200, 100, "任務を選べ", Font.new(64))
       6.times do |button_num|
-        if button_num <= @can_play_stage
+        if button_num <= @can_play_stage - 1
           @buttons[button_num].image = @stage_button_image_active
         else
           @buttons[button_num].image = @stage_button_image_nonactive
@@ -47,26 +47,21 @@ module Scene
       end
 
       if Input.mouse_push?(M_LBUTTON)
-        @next_scene = Scene::Stage1.new  if $mouse === @buttons[0]
-        @next_scene = Scene::Stage2.new  if $mouse === @buttons[1]
-        @next_scene = Scene::Stage3.new  if $mouse === @buttons[2]
-        @next_scene = Scene::Stage4.new  if $mouse === @buttons[3]
-        @next_scene = Scene::Stage5.new  if $mouse === @buttons[4]
-        @next_scene = Scene::Stage6.new  if $mouse === @buttons[5]
-        @next_scene = Scene::Stage7.new  if $mouse === @buttons[6]
-        @next_scene = Scene::Stage8.new  if $mouse === @buttons[7]
-        @next_scene = Scene::Stage9.new  if $mouse === @buttons[8]
-        @next_scene = Scene::Stage10.new if $mouse === @buttons[9]
-        if $mouse === @buttons
+        @next_scene = Scene::Stage1.new  if @mouse === @buttons[0] && @can_play_stage >= 1
+        @next_scene = Scene::Stage2.new  if @mouse === @buttons[1] && @can_play_stage >= 2
+        @next_scene = Scene::Stage3.new  if @mouse === @buttons[2] && @can_play_stage >= 3
+        @next_scene = Scene::Stage4.new  if @mouse === @buttons[3] && @can_play_stage >= 4
+        @next_scene = Scene::Stage5.new  if @mouse === @buttons[4] && @can_play_stage >= 5
+        @next_scene = Scene::Stage6.new  if @mouse === @buttons[5] && @can_play_stage >= 6
+        if @mouse === @buttons
           @button_click_sound.play
-          @finish = true
+          @is_finish = true
         end
       end
     end
 
     def finish?
-      return true if Input.key_push?(K_ESCAPE)
-      @finish
+      @is_finish
     end
 
     def next_scene

@@ -16,6 +16,7 @@ module Fixture
         @shot_num = 0
       end
       def update
+        return 1 if @health <= 0
         if @shot_num > 3
           @shot = false
           @shot_num = 0

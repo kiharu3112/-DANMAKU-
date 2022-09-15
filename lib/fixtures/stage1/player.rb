@@ -1,5 +1,3 @@
-require 'dxruby'
-include Math
 module Fixture
     module Stage1
         class Player < Sprite

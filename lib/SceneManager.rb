@@ -1,6 +1,6 @@
 class SceneManager
   def initialize
-    @scene = Scene::Opening.new
+    @scene = Scene::Stage1.new
   end
 
   def update
@@ -8,5 +8,4 @@ class SceneManager
     @scene = @scene.next_scene if @scene.finish?
     Window.close unless @scene
   end
-
 end
