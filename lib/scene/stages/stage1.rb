@@ -42,7 +42,6 @@ module Scene
             end
         end
 
-
         def game
             background_move_draw_2
             @player.update
@@ -57,6 +56,15 @@ module Scene
                     if i === @player
                         @player.damage
                         i.hit = true
+                    end
+                end
+            end
+
+            @player.bullets.each do |n|
+                @enemies.each do |i|
+                    if i === n
+                        i.damage
+                        n.hit = true
                     end
                 end
             end

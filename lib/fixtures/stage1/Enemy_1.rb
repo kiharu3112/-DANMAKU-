@@ -35,7 +35,7 @@ module Fixture
           end
         elsif @count >= 300 && @count < 500
           self.x -= 2
-          if @shot && @count % 10 == 0
+          if @shot && @count % 15 == 0
             @shot_num += 1
             shot
             @shot_timer = 0

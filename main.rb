@@ -9,12 +9,10 @@ Dir[
 ].each do |file|
   require_relative file
 end
-scene = Scene::Opening.new
 $PATH = File.dirname(__FILE__)
 $mouse = Mouse.new
+scenemanager = SceneManager.new
 Window.loop do
   $mouse.update
-  scene.update
-  scene = scene.next_scene if scene.finish?
-  Window.close unless scene
+  scenemanager.update
 end

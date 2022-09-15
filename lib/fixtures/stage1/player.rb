@@ -49,7 +49,7 @@ module Fixture
                 if Input.key_down?(K_W)
                     self.y -= 5
                 elsif Input.key_down?(K_S)
-                    self.y += 3
+                    self.y += 5
                 end
                 if Input.key_down?(K_A)
                     self.x -= 8
