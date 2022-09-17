@@ -12,6 +12,7 @@ module Fixture
       def update
         move
         if self.x < 0 || self.x > Window.width || self.y > Window.height || self.y < 0 || @hit
+          @hit = true
           return 1
         end
         self.draw

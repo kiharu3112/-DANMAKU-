@@ -53,7 +53,7 @@ module Scene
     end
 
     def finish?
-      @is_finish
+      super
     end
 
     def next_scene

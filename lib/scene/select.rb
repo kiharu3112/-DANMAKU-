@@ -36,10 +36,10 @@ module Scene
 
 
       6.times do|button_num|
-        if @buttons[button_num] === $mouse && !@button_checker[button_num]
+        if @buttons[button_num] === @mouse && !@button_checker[button_num]
           @button_checker[button_num] = true
           @button_touch_sound.play
-        elsif @buttons[button_num] === $mouse
+        elsif @buttons[button_num] === @mouse
           @button_checker[button_num] = true
         else
           @button_checker[button_num] = false
@@ -61,7 +61,7 @@ module Scene
     end
 
     def finish?
-      @is_finish
+      super
     end
 
     def next_scene

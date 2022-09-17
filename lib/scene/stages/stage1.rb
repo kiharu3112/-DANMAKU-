@@ -4,6 +4,7 @@ module Scene
         def initialize
             @player = Player.new
             @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")
+            @destroy_enemy = 0
             super
         end
 
@@ -11,7 +12,7 @@ module Scene
             super
         end
 
-        def startgi
+        def start
             if @count > 60
                 background_move_draw_1
                 Window.draw(Window.width / 2 - @carrier.width / 2, (@count - 60) * 4 - (@carrier.height - 300)  / 2, @carrier)
@@ -24,6 +25,7 @@ module Scene
                     @player.y -= (@count - 600)
                     if @player.y == Window.height - 60
                         @scene = :game
+                        @count = 0
                     end
                 end
             else
@@ -36,12 +38,22 @@ module Scene
         def game
             background_move_draw_2
             @player.update
-            if @count % 1200 == 0
+            case @count
+            when 0
+                @enemies << Enemy_1.new(Window.width / 4, -200)
+                @enemies << Enemy_1.new(Window.width / 2, -150)
+                @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+            when 600
+                @enemies << Enemy_1.new(Window.width / 4, -200)
+                @enemies << Enemy_1.new(Window.width / 2, -150)
+                @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+            when 1200
                 @enemies << Enemy_1.new(Window.width / 4, -200)
                 @enemies << Enemy_1.new(Window.width / 2, -150)
                 @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
             end
-            @enemies.each { |n|n.update }
+            @enemies.each { |n| n.update }
+            @enemies.delete_if { |n| n.health <= 0 }
             @enemies.each do |n|
                 n.bullets.each do |i|
                     if i === @player
@@ -55,23 +67,34 @@ module Scene
                 @enemies.each do |i|
                     if i === n
                         i.damage
+                        @destroy_enemy += 1 if i.health <= 0
                         n.hit = true
                     end
                 end
             end
 
-            if @player.health <= 0
-                @scene = :end_scene
-            end
+            ###############################################
+            # check
+            @scene = :end if (@enemies.count == 0 && @count > 1300) || @player.health <= 0
+
         end
 
         def end_scene
             super
             background_move_draw_2
-            @player.y -= 5
-            if @player.y < -10
+            if @player.health >= 1
+                @player.draw
+                @enemies.each { |n| n.draw }
+                @player.y -= 5
+                if @player.y < -10
+                    @is_finish = true
+                    @next_scene = Scene::Result1.new(@count, @player.health)
+                end
+            else
                 @is_finish = true
+                @next_scene = Scene::Result.new(@count, @player.health)
             end
+
         end
 
         def finish?

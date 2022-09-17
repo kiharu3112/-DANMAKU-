@@ -17,6 +17,7 @@ module Fixture
 
             def update
                 @bullets.each { |n| n.update }
+                @bullets.delete_if { |n| n.hit }
                 @shot_timer += 1
                 if Input.key_down?(K_SPACE) && @shot_timer > 5
                     @shot_timer = 0

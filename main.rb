@@ -8,7 +8,8 @@ Dir[
   'lib/fixtures/bullet.rb',
   'lib/fixtures/stage2/*.rb',
   'lib/fixtures/stage3/*.rb',
-
+  'lib/scene/results/*.rb',
+  'lib/fixtures/result/*.rb'
 ].each do |file|
   require_relative file
 end

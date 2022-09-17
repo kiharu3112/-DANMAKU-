@@ -27,6 +27,7 @@ module Fixture
           @shot = true
         end
         @bullets.each { |n| n.update }
+        @bullets.delete_if { |n|n.hit }
         if @count < 300
           self.y += 1
           if @shot && @count % 10 == 0

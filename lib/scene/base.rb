@@ -18,31 +18,12 @@ module Scene
     end
 
     def finish?
-      raise NotImplementedError
+      return true if Input.key_down?(K_ESCAPE)
+      @is_finish
     end
 
     private
 
-    def move_background_right_and_draw
-      background_y_pos = @count % Window.height
-      Window.draw(background_y_pos - Window.height, 0, @background)
-      Window.draw(background_y_pos, 0, @background)
-    end
 
-    def background_move_draw_1
-      background_y_pos = @count % Window.height
-      Window.draw(0, background_y_pos - Window.height, @background)
-      Window.draw(0, background_y_pos, @background)
-    end
-
-    def background_move_draw_2
-      background_y_pos = (@count * 2) % Window.height
-      Window.draw(0, background_y_pos - Window.height, @background)
-      Window.draw(0, background_y_pos, @background)
-    end
-
-    def just_draw
-      Window.draw(0, 0, @background)
-    end
   end
 end
