@@ -88,11 +88,11 @@ module Scene
                 @player.y -= 5
                 if @player.y < -10
                     @is_finish = true
-                    @next_scene = Scene::Result1.new(@count, @player.health)
+                    @next_scene = Scene::Result.new(@count, @player.health, 1)
                 end
             else
                 @is_finish = true
-                @next_scene = Scene::Result.new(@count, @player.health)
+                @next_scene = Scene::Result.new(@count, @player.health, 1)
             end
 
         end

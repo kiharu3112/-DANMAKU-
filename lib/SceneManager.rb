@@ -1,6 +1,6 @@
 class SceneManager
   def initialize
-    @scene = Scene::Select.new
+    @scene = Scene::End.new
   end
 
   def update
