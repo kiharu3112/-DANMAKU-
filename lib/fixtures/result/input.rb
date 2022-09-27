@@ -28,6 +28,7 @@ module Fixture
       return "Y" if Input.key_push?(K_Y)
       return "Z" if Input.key_push?(K_Z)
       return "?" if Input.key_push?(K_SLASH)
+      return "_" if Input.key_push?(K_UNDERLINE)
     end
     return "a" if Input.key_push?(K_A)
     return "b" if Input.key_push?(K_B)
@@ -82,5 +83,6 @@ module Fixture
     return "↓" if Input.key_push?(K_DOWNARROW)
     return " " if Input.key_push?(K_SPACE)
     return "@" if Input.key_push?(K_AT)
+    return `\\` if Input.key_push?(K_UNDERLINE)
   end
 end

@@ -1,31 +1,38 @@
 module Scene
-  class End
+  class NameInput < Scene::Base
     include Fixture
     def initialize
+      super
       @name = []
-      @next_scene = Scene::Ranking.new
+      @next_scene = nil
       @input
-      @score = 300
-      @next_scene = Scene::Ranking.new
       @finish = false
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
+      @score_count = 0
     end
 
     def update
-      Window.draw_font(Window.width / 2, Window.height / 4, "YOUR SCORE IS : #{@score}", Font.new(64))
+      super
+      if @score_count < $score && @count % 2 == 0 && @count > 60
+        @score_count += 1
+      end
+      Window.draw_font(Window.width / 2 - 200, Window.height / 4, "SCORE IS : #{@score_count}", Font.new(64, 'Westminster'))
       Window.draw(Window.width / 3 - 100, Window.height / 2, @vertical_line)
       Window.draw(Window.width / 3 - 100, Window.height / 2, @beside_line)
       Window.draw(Window.width / 3 - 100, Window.height / 2 + 75, @beside_line)
       Window.draw(Window.width / 3 + 650,Window.height / 2, @vertical_line)
 
-      Window.draw_font(Window.width / 3 - 90, Window.height / 2 + 10, "#{@name.join}", Font.new(60))
+      Window.draw_font(Window.width / 3 - 90, Window.height / 2 + 10, "#{@name.join}", Font.new(64, 'Westminster'))
       n = input
       case n
       when "back"
         @name.pop
       when "enter"
-        @finish = true if @name.count > 0
+        if @name.count > 0
+          @is_finish = true
+          @next_scene = Scene::Ranking.new(@score, @name)
+        end
       else
         if @name.count <= 13 && n != nil
           @name << n
@@ -39,7 +46,7 @@ module Scene
     end
 
     def finish?
-      @finish
+      @is_finish
     end
 
     def next_scene

@@ -1,16 +1,15 @@
 module Scene
   class Result
-    def initialize(count, player_health, stage_num)
+    def initialize(player_health, stage_num)
       if player_health >= 1
         @win = :true
       else
-        @ein = false
+        @win = false
       end
-      @count = count
       @next_button = Sprite.new(Window.width - 350,Window.height -  130, Image.new(300, 100, C_WHITE))
       @stage_num = stage_num
       @next_scene = nil
-      @finish = false
+      @is_finish = false
       @mouse = Fixture::Mouse.new
       @stages = [
         Scene::Stage1.new,
@@ -27,21 +26,19 @@ module Scene
         lose
       end
       @next_button.draw
-
-
     end
 
     def win
       if Input.mouse_push?(M_LBUTTON) && @mouse === @next_button
         @next_scene = @stages[@stage_num]
-        @finish = true
+        @is_finish = true
       end
     end
 
     def lose
       if Input.mouse_push?(M_LBUTTON)
-        @next_scene = Scene::End.new
-        @finish = true
+        @next_scene = Scene::NameInput.new
+        @is_finish = true
       end
     end
 
@@ -51,7 +48,7 @@ module Scene
 
     def finish?
       return true if Input.key_down?(K_ESCAPE)
-      @finish
+      @is_finish
     end
   end
 end

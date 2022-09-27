@@ -67,7 +67,11 @@ module Scene
                 @enemies.each do |i|
                     if i === n
                         i.damage
-                        @destroy_enemy += 1 if i.health <= 0
+                        if i.health <= 0
+                            @destroy_enemy += 1 
+                            $score += 10
+                        end
+
                         n.hit = true
                     end
                 end
@@ -76,7 +80,7 @@ module Scene
             ###############################################
             # check
             @scene = :end if (@enemies.count == 0 && @count > 1300) || @player.health <= 0
-
+            Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(48, 'Westminster'))
         end
 
         def end_scene
@@ -88,11 +92,11 @@ module Scene
                 @player.y -= 5
                 if @player.y < -10
                     @is_finish = true
-                    @next_scene = Scene::Result.new(@count, @player.health, 1)
+                    @next_scene = Scene::Result.new(@player.health, 1)
                 end
             else
                 @is_finish = true
-                @next_scene = Scene::Result.new(@count, @player.health, 1)
+                @next_scene = Scene::Result.new(@player.health, 1)
             end
 
         end

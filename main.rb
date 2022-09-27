@@ -1,4 +1,5 @@
 require 'dxruby'
+require 'json'
 Dir[
   'lib/*.rb',
   'lib/fixtures/stage1/*.rb',
@@ -14,6 +15,7 @@ Dir[
   require_relative file
 end
 $PATH = File.dirname(__FILE__)
+$score = 0
 Font.install("lib/fixtures/setting/Westminster.ttf")
 scenemanager = SceneManager.new
 Window.loop do

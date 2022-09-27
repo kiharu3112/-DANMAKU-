@@ -6,8 +6,8 @@ module Scene
       @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
 
       darklategrey = [34, 43, 56]
-      button_front = Image.new(360, 180, darklategrey)
-      mini_fornt = Image.new(256, 128, darklategrey)
+      button_front = Image.new(480, 180, darklategrey)
+      mini_fornt = Image.new(300, 128, darklategrey)
 
       @Select = Sprite.new(Window.width / 2 - button_front.width / 2 , Window.height / 2 - button_front.height / 2, button_front)
       @Exit = Sprite.new(Window.width / 2 - mini_fornt.width / 2, Window.height / 3 * 2 , mini_fornt)
@@ -31,7 +31,7 @@ module Scene
       end
 
       @Exit.draw
-      Window.draw_font(Window.width / 2 - 40, Window.height / 2 + 120, "Exit", Font.new(48))
+      Window.draw_font(Window.width / 2 - 40, Window.height / 2 + 200, "Exit", Font.new(48))
       if @Exit === @mouse && !@Exit_check
         @Exit_check = true
         @touch_sound.play
