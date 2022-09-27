@@ -16,9 +16,16 @@ module Scene
         Scene::Stage2.new,
         Scene::Stage3.new
       ]
+      @score_count = 0
+      @count = 0
     end
 
     def update
+      @count += 1
+      if @score_count < $score && @count % 2 == 0 && @count > 60
+        @score_count += 1
+      end
+      Window.draw_font(Window.width / 2 - 200, Window.height / 4, "SCORE IS : #{@score_count}", Font.new(64, 'Westminster'))
       @mouse.update
       if @win
         win

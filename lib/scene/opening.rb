@@ -43,7 +43,7 @@ module Scene
 
       if Input.mouse_push?(M_LBUTTON)
         if @mouse === @Select
-          @next_scene = Scene::Select.new
+          @next_scene = Scene::Stage1.new
           @is_finish = true
         elsif @mouse === @Exit_check
           @next_scene = nil
