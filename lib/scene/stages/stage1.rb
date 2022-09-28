@@ -83,7 +83,6 @@ module Scene
                 @scene = :end
                 @player.image = @player.normal_image
             end
-            Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(48, 'Westminster'))
         end
 
         def end_scene

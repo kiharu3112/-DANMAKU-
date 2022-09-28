@@ -22,7 +22,7 @@ module Scene
     end
 
     def game
-
+      Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(48, @font))
     end
 
     def end_scene

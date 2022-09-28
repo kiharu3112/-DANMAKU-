@@ -7,6 +7,7 @@ module Scene
       @is_finish = false
       @next_scene = nil
       @base_font = 'x8y12pxTheStrongGamer'
+      @font = 'x8y12pxTheStrongGamer'
     end
 
     def update

@@ -22,6 +22,8 @@ module Scene
       @score_count = 0
       @count = 0
       @touch = false
+      @retire_image = Image.new(250, 45, C_RED)
+      @retire_button = Sprite.new(Window.width / 2 - 200, Window.height / 2 * 3 - 25, @retire_image)
     end
 
     def update
@@ -47,6 +49,17 @@ module Scene
       Window.draw(Window.width / 2 - 180, Window.height / 3 * 2 + 35, Image.new(430, 3, C_WHITE)) if @touch
       if Input.mouse_push?(M_LBUTTON) && @touch
         @next_scene = @stages[@stage_num]
+        @is_finish = true
+      end
+
+      ##################################################################
+      @retire_touch = false
+      @retire_button.draw
+      @retire_touch = true if @mouse === @retire_button
+      Window.draw_font(Window.width / 2 - 100, Window.height / 2 * 3- 100, "Retire", Font.new(36, @font))
+      Window.draw(Window.width / 2 - 100, Window.height / 2 * 3- 150, Image.new(300, 3, C_WHITE))
+      if Input.mouse_push?(M_LBUTTON) && @retire_touch
+        @next_scene = Scene::NameInput.new
         @is_finish = true
       end
     end
