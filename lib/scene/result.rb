@@ -1,7 +1,10 @@
 module Scene
   class Result
     def initialize(player_health, stage_num)
-      if player_health >= 1
+      if stage_num >= 6
+        @next_scene = Scene::Ending.new
+        @is_finish = true
+      elsif  player_health >= 1
         @win = :true
       else
         @win = false
@@ -16,7 +19,10 @@ module Scene
       @stages = [
         Scene::Stage1.new,
         Scene::Stage2.new,
-        Scene::Stage3.new
+        Scene::Stage3.new,
+        Scene::Stage4.new,
+        Scene::Stage5.new,
+        Scene::Stage6.new
       ]
       @font = 'x8y12pxTheStrongGamer'
       @score_count = 0
@@ -45,8 +51,8 @@ module Scene
     end
 
     def win
-      Window.draw_font(Window.width / 2 - 190, Window.height / 3 * 2 - 30, "Next Stage", Font.new(64, @font))
-      Window.draw(Window.width / 2 - 190, Window.height / 3 * 2 + 35, Image.new(430, 3, C_WHITE)) if @touch
+      Window.draw_font(Window.width / 2 - 190, Window.height / 3 * 2 - 30, ">>Next Stage", Font.new(64, @font))
+      Window.draw(Window.width / 2 - 190, Window.height / 3 * 2 + 35, Image.new(450, 3, C_WHITE)) if @touch
       if Input.mouse_push?(M_LBUTTON) && @touch
         @next_scene = @stages[@stage_num]
         @is_finish = true
@@ -66,7 +72,7 @@ module Scene
 
     def lose
       Window.draw_font(Window.width / 2 - 180, Window.height / 3 * 2 - 30, "Next Scene", Font.new(64, @font))
-      Window.draw(Window.width / 2 - 180, Window.height / 3 * 2 + 35, Image.new(430, 3, C_WHITE)) if @touch
+      Window.draw(Window.width / 2 - 180, Window.height / 3 * 2 + 35, Image.new(450, 3, C_WHITE)) if @touch
       if Input.mouse_push?(M_LBUTTON) && @touch
         @next_scene = Scene::NameInput.new
         @is_finish = true

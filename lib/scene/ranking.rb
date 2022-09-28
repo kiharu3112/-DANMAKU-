@@ -7,7 +7,7 @@ module Scene
 
     def update
       Window.draw_font(100, 100, "Ranking!", Font.new(32, @base_font))
-      if Input.key_push?(K_RETURN)
+      if Input.key_push?(K_RETURN) || Input.mouse_push?(M_LBUTTON)
         @next_scene = Scene::Opening.new
         @is_finish = true
       end
