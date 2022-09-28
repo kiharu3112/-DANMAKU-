@@ -43,11 +43,11 @@ module Scene
                 @enemies << Enemy_1.new(Window.width / 4, -200)
                 @enemies << Enemy_1.new(Window.width / 2, -150)
                 @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
-            when 600
+            when 500
                 @enemies << Enemy_1.new(Window.width / 4, -200)
                 @enemies << Enemy_1.new(Window.width / 2, -150)
                 @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
-            when 1200
+            when 1000
                 @enemies << Enemy_1.new(Window.width / 4, -200)
                 @enemies << Enemy_1.new(Window.width / 2, -150)
                 @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
@@ -79,7 +79,10 @@ module Scene
 
             ###############################################
             # check
-            @scene = :end if (@enemies.count == 0 && @count > 1300) || @player.health <= 0
+            if (@enemies.count == 0 && @count > 1300) || @player.health <= 0
+                @scene = :end
+                @player.image = @player.normal_image
+            end
             Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(48, 'Westminster'))
         end
 
@@ -98,7 +101,6 @@ module Scene
                 @is_finish = true
                 @next_scene = Scene::Result.new(@player.health, 1)
             end
-
         end
 
         def finish?

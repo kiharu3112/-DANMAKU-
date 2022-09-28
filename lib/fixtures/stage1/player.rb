@@ -3,6 +3,7 @@ module Fixture
         class Player < Sprite
             attr_reader :health
             attr_accessor :bullets
+            attr_reader :normal_image
             def initialize
                 @health = 5
                 self.x = Window.width / 2 - 5

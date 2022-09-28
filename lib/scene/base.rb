@@ -6,6 +6,7 @@ module Scene
       @mouse = Fixture::Mouse.new
       @is_finish = false
       @next_scene = nil
+      @base_font = 'x8y12pxTheStrongGamer'
     end
 
     def update

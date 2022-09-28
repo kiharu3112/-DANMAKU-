@@ -29,6 +29,7 @@ module Fixture
       return "Z" if Input.key_push?(K_Z)
       return "?" if Input.key_push?(K_SLASH)
       return "_" if Input.key_push?(K_UNDERLINE)
+      return "!" if Input.key_push?(K_1)
     end
     return "a" if Input.key_push?(K_A)
     return "b" if Input.key_push?(K_B)

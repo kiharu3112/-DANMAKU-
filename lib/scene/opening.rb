@@ -6,11 +6,11 @@ module Scene
       @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
 
       darklategrey = [34, 43, 56]
-      button_front = Image.new(480, 180, darklategrey)
-      mini_fornt = Image.new(300, 128, darklategrey)
+      button_front = Image.new(470, 120, darklategrey)
+      mini_fornt = Image.new(300, 80, darklategrey)
 
-      @Select = Sprite.new(Window.width / 2 - button_front.width / 2 , Window.height / 2 - button_front.height / 2, button_front)
-      @Exit = Sprite.new(Window.width / 2 - mini_fornt.width / 2, Window.height / 3 * 2 , mini_fornt)
+      @Select = Sprite.new(Window.width / 2 - button_front.width / 2 , Window.height / 2 - button_front.height / 2 + 30, button_front)
+      @Exit = Sprite.new(Window.width / 2 - mini_fornt.width / 2, Window.height / 3 * 2 + 30, mini_fornt)
 
       @Select_check = false
       @Exit_check = false
@@ -20,7 +20,7 @@ module Scene
     def update
       super
       @Select.draw
-      Window.draw_font(Window.width / 2 - 120, Window.height / 2 - 30, "GameStart!", Font.new(56))
+      Window.draw_font(Window.width / 2 - 230, Window.height / 2, "🎮GameStart!🎮", Font.new(56, @base_font))
       if @Select === @mouse && !@Select_check
         @Select_check = true
         @touch_sound.play
@@ -31,7 +31,7 @@ module Scene
       end
 
       @Exit.draw
-      Window.draw_font(Window.width / 2 - 40, Window.height / 2 + 200, "Exit", Font.new(48))
+      Window.draw_font(Window.width / 2 - 150, Window.height / 2 + 200, "👑Ranking👑", Font.new(48, @base_font))
       if @Exit === @mouse && !@Exit_check
         @Exit_check = true
         @touch_sound.play

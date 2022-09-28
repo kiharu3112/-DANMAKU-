@@ -1,5 +1,5 @@
 module Scene
-  class Stage2 < Scene::Stage
+  class Stage5 < Scene::Stage
     include Fixture::Stage1
     def initialize
       @player = Player.new
@@ -112,3 +112,4 @@ module Scene
     end
   end
 end
+
