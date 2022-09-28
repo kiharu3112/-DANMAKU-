@@ -52,7 +52,7 @@ module Scene
 
     def win
       Window.draw_font(Window.width / 2 - 190, Window.height / 3 * 2 - 30, ">>Next Stage", Font.new(64, @font))
-      Window.draw(Window.width / 2 - 190, Window.height / 3 * 2 + 35, Image.new(450, 3, C_WHITE)) if @touch
+      Window.draw(Window.width / 2 - 190, Window.height / 3 * 2 + 35, Image.new(500, 3, C_WHITE)) if @touch
       if Input.mouse_push?(M_LBUTTON) && @touch
         @next_scene = @stages[@stage_num]
         @is_finish = true
@@ -62,8 +62,8 @@ module Scene
       @retire_touch = false
       @retire_button.draw
       @retire_touch = true if @mouse === @retire_button
-      Window.draw_font(Window.width / 2 - 100, Window.height / 2 * 3- 100, "Retire", Font.new(36, @font))
-      Window.draw(Window.width / 2 - 100, Window.height / 2 * 3- 150, Image.new(300, 3, C_WHITE))
+      Window.draw_font(Window.width / 2 - 100, Window.height / 3 * 2 + 100, "Retire", Font.new(36, @font))
+      Window.draw(Window.width / 2 - 100, Window.height / 3 * 2 + 140, Image.new(150, 3, C_WHITE)) if @retire_touch
       if Input.mouse_push?(M_LBUTTON) && @retire_touch
         @next_scene = Scene::NameInput.new
         @is_finish = true
