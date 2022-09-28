@@ -1,5 +1,6 @@
 require 'dxruby'
 require 'json'
+require 'time'
 Dir[
   'lib/*.rb',
   'lib/fixtures/stage1/*.rb',
