@@ -1,6 +1,6 @@
 module Scene
   class Stage2 < Scene::Stage
-    include Fixture::Stage1
+    include Fixture::Stage2
     def initialize
       @player = Player.new
       @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")

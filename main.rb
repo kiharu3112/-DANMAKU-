@@ -4,13 +4,12 @@ require 'time'
 Dir[
   'lib/*.rb',
   'lib/fixtures/stage1/*.rb',
-  'lib/scene/*.rb',
-  'lib/scene/stages/*.rb',
-  'lib/fixtures/*.rb',
-  'lib/fixtures/bullet.rb',
   'lib/fixtures/stage2/*.rb',
   'lib/fixtures/stage3/*.rb',
-  'lib/fixtures/result/*.rb'
+  'lib/scene/*.rb',
+  'lib/fixtures/*.rb',
+  'lib/fixtures/result/*.rb',
+  'lib/setting.rb'
 ].each do |file|
   require_relative file
 end

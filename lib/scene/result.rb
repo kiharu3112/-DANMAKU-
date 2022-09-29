@@ -32,7 +32,6 @@ module Scene
     end
 
     def update
-
       @count += 1
       if @score_count < $score && @count % 2 == 0 && @count > 60
         @score_count += 1
@@ -72,6 +71,7 @@ module Scene
     def lose
       Window.draw_font(Window.width / 2 - 180, Window.height / 3 * 2 - 30, "Next Scene", Font.new(64, @font))
       Window.draw(Window.width / 2 - 180, Window.height / 3 * 2 + 35, Image.new(450, 3, C_WHITE)) if @touch
+
       if Input.mouse_push?(M_LBUTTON) && @touch
         @next_scene = Scene::NameInput.new
         @is_finish = true
