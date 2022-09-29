@@ -22,7 +22,7 @@ module Scene
     def update
       super
       @Select.draw
-      Window.draw_font(Window.width / 2 - 230, Window.height / 2, "🎮GameStart!🎮", Font.new(56, @base_font))
+      Window.draw_font(Window.width / 2 - 230, Window.height / 2, "🎮GameStart!🎮", Font.new(56, @font))
       Window.draw(Window.width / 2 - 230, Window.height / 2 + 60, Image.new(460, 3, C_WHITE)) if @mouse === @Select
       if @Select === @mouse && !@Select_check
         @Select_check = true
@@ -34,7 +34,7 @@ module Scene
       end
 
       @Ranking.draw
-      Window.draw_font(Window.width / 2 - 150, Window.height / 2 + 200, "👑Ranking👑", Font.new(48, @base_font))
+      Window.draw_font(Window.width / 2 - 150, Window.height / 2 + 200, "👑Ranking👑", Font.new(48, @font))
       Window.draw(Window.width / 2 - 150, Window.height / 2 + 250, Image.new(300, 3, C_WHITE)) if @mouse === @Ranking
       if @Ranking === @mouse && !@Ranking_check
         @Ranking_check = true
@@ -46,7 +46,7 @@ module Scene
       end
 
       @Exit.draw
-      Window.draw_font(Window.width / 2 - 65, Window.height / 4 * 3 + 90, "Exit", Font.new(48, @base_font))
+      Window.draw_font(Window.width / 2 - 65, Window.height / 4 * 3 + 90, "Exit", Font.new(48, @font))
       Window.draw(Window.width / 2 - 65, Window.height / 4 * 3 + 140, Image.new(130, 3, C_WHITE)) if @mouse === @Exit
       if @Exit === @mouse && !@Exit_check
         @Exit_check = true

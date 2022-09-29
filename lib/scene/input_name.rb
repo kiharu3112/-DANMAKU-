@@ -10,6 +10,10 @@ module Scene
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
       @score_count = 0
+      File.open("#{$PATH}/rank.json") do |file|
+        @data = JSON.load(file)
+      end
+      @t = Time.now
     end
 
     def update
@@ -32,6 +36,7 @@ module Scene
         if @name.count > 0
           @is_finish = true
           @next_scene = Scene::Ranking.new
+          add_data
         end
       else
         if @name.count <= 13 && n != nil
@@ -52,6 +57,23 @@ module Scene
 
     def next_scene
       @next_scene
+    end
+
+    def add_data
+      @userdata = {
+        "name":@name.join,
+        "score":$score,
+        "time":"#{@t.year}/#{@t.month}/#{@t.day} #{@t.hour}:#{@t.min == 0 ? '00' : @t.min}"
+      }
+      5.times do |n|
+        if @data["ranking"][n]["score"] < $score || @data["ranking"][n]["name"] == ""
+          @data["ranking"].insert(n,@userdata)
+          break
+        end
+      end
+      File.open("#{$PATH}/rank.json", "w") do |file|
+        JSON.dump(@data, file)
+      end
     end
   end
 end
