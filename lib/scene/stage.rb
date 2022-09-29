@@ -28,11 +28,26 @@ module Scene
     end
 
     def game
+      background_move_draw_2
+      @player.update
       Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @font))
       Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @font))
     end
 
     def end_scene
+      background_move_draw_2
+      if $health >= 1
+        @player.draw
+        @enemies.each { |n| n.draw }
+        @player.y -= 5
+        if @player.y < -10
+          @is_finish = true
+          @next_scene = Scene::Result.new(@stage_num)
+        end
+      else
+        @is_finish = true
+        @next_scene = Scene::Result.new(@stage_num)
+      end
     end
 
     def finish?

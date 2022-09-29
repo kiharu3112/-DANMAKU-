@@ -5,6 +5,7 @@ module Scene
       @player = Fixture::Player.new
       @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")
       @destroy_enemy = 0
+      @stage_num = 6
       super
     end
 
@@ -17,8 +18,6 @@ module Scene
     end
 
     def game
-      background_move_draw_2
-      @player.update
       case @count
       when 0
         @enemies << Enemy_1.new(Window.width / 4, -200)
@@ -69,19 +68,7 @@ module Scene
 
     def end_scene
       super
-      background_move_draw_2
-      if $health >= 1
-        @player.draw
-        @enemies.each { |n| n.draw }
-        @player.y -= 5
-        if @player.y < -10
-          @is_finish = true
-          @next_scene = Scene::Result.new(6)
-        end
-      else
-        @is_finish = true
-        @next_scene = Scene::Result.new(6)
-      end
+
     end
 
     def finish?
