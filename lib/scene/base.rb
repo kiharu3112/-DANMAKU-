@@ -7,8 +7,6 @@ module Scene
       @is_finish = false
       @next_scene = nil
       @font = 'x8y12pxTheStrongGamer'
-      darklategrey = [34, 43, 56]
-      Window.bgcolor = darklategrey
     end
 
     def update

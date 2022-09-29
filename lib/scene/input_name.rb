@@ -20,7 +20,8 @@ module Scene
       if @score_count < $score && @count % 2 == 0 && @count > 60
         @score_count += 1
       end
-      Window.draw_font(Window.width / 2 - 200, Window.height / 4, "SCORE IS : #{@score_count}", Font.new(64, @font))
+      Window.draw_font(Window.width / 2 - 500, Window.height / 5, "Please Input Your Name", Font.new(64, @font))
+      Window.draw_font(Window.width / 2 - 230, Window.height / 3, "SCORE IS : #{@score_count}", Font.new(64, @font))
       Window.draw(Window.width / 3 - 100, Window.height / 2, @vertical_line)
       Window.draw(Window.width / 3 - 100, Window.height / 2, @beside_line)
       Window.draw(Window.width / 3 - 100, Window.height / 2 + 75, @beside_line)
@@ -38,7 +39,7 @@ module Scene
           add_data
         end
       else
-        if @name.count <= 13 && n != nil
+        if @name.count <= 16 && n != nil
           @name << n
         end
       end
