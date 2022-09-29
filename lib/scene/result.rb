@@ -30,7 +30,7 @@ module Scene
         Scene::Stage6.new
       ]
 
-      @next_scene_button = Sprite.new(Window.width / 2 - 220, Window.height / 3 * 2 - 10, Image.new(520, 45, C_RED))
+      @next_scene_button = Sprite.new(Window.width / 2 - 220, Window.height / 3 * 2 - 10, Image.new(520, 45, [0,0,0,0]))
     end
 
     def update
@@ -53,7 +53,8 @@ module Scene
       @next_button.draw
       @touch = false
       @touch = true if @next_button === @mouse
-      Window.draw_font(Window.width / 2 - 240, Window.height / 3 * 2 - 30, ">>Next Stage", Font.new(64, @font))
+      Window.draw_font(Window.width / 2 - 240, Window.height / 3 * 2 - 30, ">>Next Stage", Font.new(64, @font)) if @stage_num != 6
+      Window.draw_font(Window.width / 2 - 240, Window.height / 3 * 2 - 30, ">>Last Stage", Font.new(64, @font)) if @stage_num == 6
       Window.draw(Window.width / 2 - 240, Window.height / 3 * 2 + 35, Image.new(510, 3, C_WHITE)) if @touch
       if Input.mouse_push?(M_LBUTTON) && @touch
         @next_scene = @stages[@stage_num]

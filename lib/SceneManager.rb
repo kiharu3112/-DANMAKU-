@@ -1,6 +1,6 @@
 class SceneManager
   def initialize
-    @scene = Scene::Opening.new(1)
+    @scene = Scene::Opening.new
     darklategrey = [34, 43, 56]
     Window.bgcolor = darklategrey
   end

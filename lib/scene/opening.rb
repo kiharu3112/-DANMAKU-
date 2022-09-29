@@ -22,6 +22,7 @@ module Scene
     def update
       super
       @Select.draw
+      Window.draw_font(Window.width / 2 - 600, Window.height / 6, "!DANMAKU!", Font.new(200, @font))
       Window.draw_font(Window.width / 2 - 230, Window.height / 2, "🎮GameStart!🎮", Font.new(56, @font))
       Window.draw(Window.width / 2 - 230, Window.height / 2 + 60, Image.new(460, 3, C_WHITE)) if @mouse === @Select
       if @Select === @mouse && !@Select_check

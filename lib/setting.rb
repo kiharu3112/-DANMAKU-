@@ -1,5 +1,5 @@
 
-Window.caption = "Summer Game(*'▽')"
+Window.caption = "!DANMAKU!"
 module Setting
   Window.width = 1280
   Window.height = 960
