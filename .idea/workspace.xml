@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rank.json" beforeDir="false" afterPath="$PROJECT_DIR$/lib/rank.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/setting/x8y12pxTheStrongGamer.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/font/x8y12pxTheStrongGamer.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/main.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
