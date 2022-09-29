@@ -7,6 +7,8 @@ module Scene
       @enemies = []
       @scene = :start
       @player = Fixture::Player.new
+      @enemy_num = 100
+      $health = 50
     end
 
     def update
@@ -33,9 +35,34 @@ module Scene
       Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @font))
       Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @font))
       Window.draw_font(Window.width - 300, 200, "count :#{@count}", Font.new(36, @font))
-      if @enemy_num <= 0 || $health <= 0
+      if (@enemies.count <= 0 || $health <= 0) && @count > 500
         @scene = :end
         @player.image = @player.normal_image
+      end
+      #########################################################################
+      @enemies.each { |n| n.update }
+      @enemies.delete_if { |n| n.health <= 0 }
+      @enemies.each do |n|
+        n.bullets.each do |i|
+          if i === @player
+            @player.damage
+            i.hit = true
+          end
+        end
+      end
+
+      @player.bullets.each do |n|
+        @enemies.each do |i|
+          if i === n
+            i.damage
+            if i.health <= 0
+              @enemy_num -= 1
+              $score += 10
+              break
+            end
+            n.hit = true
+          end
+        end
       end
     end
 
