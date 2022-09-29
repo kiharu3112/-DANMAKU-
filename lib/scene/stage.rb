@@ -8,7 +8,6 @@ module Scene
       @scene = :start
       @player = Fixture::Player.new
       @enemy_num = 100
-      $health = 50
     end
 
     def update

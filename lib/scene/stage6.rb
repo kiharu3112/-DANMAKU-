@@ -1,6 +1,6 @@
 module Scene
   class Stage6 < Scene::Stage
-    include Fixture::Stage1
+    include Fixture::Stage6
     def initialize
       super
       @stage_num = 6
@@ -22,14 +22,30 @@ module Scene
         @enemies << Enemy_1.new(Window.width / 4, -200)
         @enemies << Enemy_1.new(Window.width / 2, -150)
         @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
-      when 500
+      when 150
         @enemies << Enemy_1.new(Window.width / 4, -200)
         @enemies << Enemy_1.new(Window.width / 2, -150)
         @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
-      when 1000
+      when 220
+        @enemies << Enemy_2.new(@player.x - 100, -200)
+        @enemies << Enemy_2.new(@player.x + 100, -150)
+      when 450
+        @enemies << Enemy_1.new(Window.width / 4, -200)
+        @enemies << Enemy_2.new(Window.width / 2, -150)
+        @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+      when 650
+        @enemies << Enemy_1.new(@player.x - 200, -200)
+        @enemies << Enemy_1.new(@player.x + 200, -200)
+      when 900
         @enemies << Enemy_1.new(Window.width / 4, -200)
         @enemies << Enemy_1.new(Window.width / 2, -150)
         @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+      when 1200
+        @enemies << Enemy_2.new(Window.width / 4, -200)
+        @enemies << Enemy_2.new(Window.width / 2, -150)
+        @enemies << Enemy_2.new(Window.width / 4 * 3, -200)
+      when 1400
+        @count = 0
       end
     end
 

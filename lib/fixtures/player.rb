@@ -11,6 +11,7 @@ module Fixture
                 @bullets = []
                 @shot_timer = 100
                 @shot_sound = Sound.new("#{$PATH}/lib/sounds/shot1.wav")
+                $health = 50
             end
 
             def update
