@@ -1,5 +1,5 @@
 module Fixture
-  module Stage4
+  module Stage
     class Bullet < Sprite
       attr_accessor :hit
       def initialize(x, y, image)
@@ -20,5 +20,4 @@ module Fixture
       end
     end
   end
-
 end

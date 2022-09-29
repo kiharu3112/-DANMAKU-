@@ -3,12 +3,7 @@ require 'json'
 require 'time'
 Dir[
   'lib/*.rb',
-  'lib/fixtures/stage1/*.rb',
-  'lib/fixtures/stage2/*.rb',
-  'lib/fixtures/stage3/*.rb',
-  'lib/fixtures/stage4/*.rb',
-  'lib/fixtures/stage5/*.rb',
-  'lib/fixtures/stage6/*.rb',
+  'lib/fixtures/stage/*.rb',
   'lib/scene/*.rb',
   'lib/fixtures/*.rb',
   'lib/fixtures/result/*.rb',

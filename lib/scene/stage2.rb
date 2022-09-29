@@ -1,6 +1,6 @@
 module Scene
   class Stage2 < Scene::Stage
-    include Fixture::Stage2
+    include Fixture::Stage
     def initialize
       super
       @stage_num = 2

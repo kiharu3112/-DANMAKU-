@@ -1,6 +1,6 @@
 module Scene
     class Stage1 < Scene::Stage
-        include Fixture::Stage1
+        include Fixture::Stage
         def initialize
             super
             @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")

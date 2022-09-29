@@ -1,5 +1,5 @@
 module Fixture
-  module Stage2
+  module Stage
     class Enemy_1 < Sprite
       attr_reader :health, :bullets
       def initialize(x, y)

@@ -30,7 +30,7 @@ module Scene
         Scene::Stage6.new
       ]
 
-      @next_scene_button = Sprite.new(Window.width / 2 - 180, Window.height / 3 * 2 - 10, Image.new(425, 45, [0,0,0,0]))
+      @next_scene_button = Sprite.new(Window.width / 2 - 220, Window.height / 3 * 2 - 10, Image.new(520, 45, C_RED))
     end
 
     def update
@@ -38,7 +38,8 @@ module Scene
       if @score_count < $score && @count % 2 == 0 && @count > 60
         @score_count += 1
       end
-      Window.draw_font(Window.width / 2 - 230, Window.height / 4, "SCORE IS : #{@score_count}", Font.new(64, @font))
+
+      Window.draw_font(Window.width / 2 - 170, Window.height / 2  - 60, "SCORE IS : #{@score_count}", Font.new(48, @font))
       @mouse.update
       if @win
         win
@@ -48,6 +49,7 @@ module Scene
     end
 
     def win
+      Window.draw_font(Window.width / 2 - 330, Window.height / 2  - 280, "Stage Clear!", Font.new(100, @font))
       @next_button.draw
       @touch = false
       @touch = true if @next_button === @mouse
@@ -71,10 +73,11 @@ module Scene
     end
 
     def lose
+      Window.draw_font(Window.width / 2 - 220, Window.height / 2  - 280, "You down", Font.new(100, @font))
       @next_scene_button.draw
       @touch = true if @mouse === @next_scene_button
-      Window.draw_font(Window.width / 2 - 180, Window.height / 3 * 2 - 30, "Next Scene", Font.new(64, @font))
-      Window.draw(Window.width / 2 - 180, Window.height / 3 * 2 + 35, Image.new(425, 3, C_WHITE)) if @touch
+      Window.draw_font(Window.width / 2 - 220, Window.height / 3 * 2 - 30, ">>Next Scene", Font.new(64, @font))
+      Window.draw(Window.width / 2 - 220, Window.height / 3 * 2 + 35, Image.new(510, 3, C_WHITE)) if @touch
       if Input.mouse_push?(M_LBUTTON) && @touch
         @next_scene = Scene::NameInput.new
         @is_finish = true

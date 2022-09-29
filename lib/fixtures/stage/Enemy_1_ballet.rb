@@ -1,6 +1,6 @@
 module Fixture
-  module Stage2
-    class Enemy_1_Gun_1 < Fixture::Stage2::Bullet
+  module Stage
+    class Enemy_1_Gun_1 < Fixture::Stage::Bullet
       attr_accessor :hit
       def initialize(x, y)
         super(x, y, Image.new(4, 9, C_YELLOW))
@@ -15,7 +15,7 @@ module Fixture
       end
     end
 
-    class Enemy_1_Gun_2 < Fixture::Stage2::Bullet
+    class Enemy_1_Gun_2 < Fixture::Stage::Bullet
       attr_accessor :hit
       def initialize(x, y)
         super(x, y, Image.new(4, 9, C_YELLOW))
@@ -31,7 +31,7 @@ module Fixture
     end
 
 
-    class Enemy_1_Gun_3 < Fixture::Stage2::Bullet
+    class Enemy_1_Gun_3 < Fixture::Stage::Bullet
       attr_accessor :hit
       def initialize(x, y)
         super(x, y, Image.new(4, 9, C_YELLOW))
