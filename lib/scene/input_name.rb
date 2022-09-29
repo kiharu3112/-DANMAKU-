@@ -8,7 +8,7 @@ module Scene
       @finish = false
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
-      File.open("#{$PATH}/rank.json") do |file|
+      File.open("#{$PATH}/lib/rank.json") do |file|
         @data = JSON.load(file)
       end
       @t = Time.now
@@ -67,7 +67,7 @@ module Scene
           break
         end
       end
-      File.open("#{$PATH}/rank.json", "w") do |file|
+      File.open("#{$PATH}/lib/rank.json", "w") do |file|
         JSON.dump(@data, file)
       end
     end

@@ -7,7 +7,7 @@ module Scene
     end
 
     def update
-      File.open("#{$PATH}/rank.json") do |file|
+      File.open("#{$PATH}/lib/rank.json") do |file|
         @data = JSON.load(file)
       end
       Window.draw_font(Window.width / 2 - 200, 80, "Ranking!", Font.new(64, @font))
