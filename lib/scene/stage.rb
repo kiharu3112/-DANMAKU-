@@ -32,6 +32,11 @@ module Scene
       @player.update
       Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @font))
       Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @font))
+      Window.draw_font(Window.width - 300, 200, "count :#{@count}", Font.new(36, @font))
+      if @enemy_num <= 0 || $health <= 0
+        @scene = :end
+        @player.image = @player.normal_image
+      end
     end
 
     def end_scene

@@ -2,11 +2,12 @@ module Scene
   class Stage3 < Scene::Stage
     include Fixture::Stage1
     def initialize
+      super
       @player = Fixture::Player.new
       @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")
       @destroy_enemy = 0
       @stage_num = 3
-      super
+      @enemy_num = 9
     end
 
     def update
@@ -18,6 +19,7 @@ module Scene
     end
 
     def game
+      super
       case @count
       when 0
         @enemies << Enemy_1.new(Window.width / 4, -200)
@@ -48,22 +50,13 @@ module Scene
           if i === n
             i.damage
             if i.health <= 0
-              @destroy_enemy += 1
+              @enemy_num -= 1
               $score += 10
             end
-
             n.hit = true
           end
         end
       end
-
-      ###############################################
-      # check
-      if (@enemies.count == 0 && @count > 1300) || $health <= 0
-        @scene = :end
-        @player.image = @player.normal_image
-      end
-      super
     end
 
     def end_scene

@@ -5,38 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/bullet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage2/Enemy_1.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage2/Enemy_1_ballet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage2/bullet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage3/Enemy_1.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage3/Enemy_1_ballet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage3/bullet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage3/enemy.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage4/Enemy_1.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage4/Enemy_1_ballet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage4/bullet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage4/enemy.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage5/Enemy_1.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage5/Enemy_1_ballet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage5/bullet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage5/enemy.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage6/Enemy_1.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage6/Enemy_1_ballet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage6/bullet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage6/enemy.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage1/bullet.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage1/bullet.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage1/enemies.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage1/player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/player.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage1/player_gun.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/player_gun.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage2/player.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage3/player.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage4/player.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage5/player.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage6/player.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/result.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/stage1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage1.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/stage2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage2.rb" afterDir="false" />
@@ -65,14 +34,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/kijiharu/Desktop/for_ruby-con/lib/fixtures/stage6",
-    "ruby.rails.projectView.checked": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kijiharu/Desktop/for_ruby-con/lib/fixtures/stage6&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage6" />
