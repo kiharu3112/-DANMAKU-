@@ -1,6 +1,6 @@
 module Scene
   class Stage4 < Scene::Stage
-    include Fixture::Stage1
+    include Fixture::Stage4
     def initialize
       super
       @stage_num = 4
@@ -19,17 +19,9 @@ module Scene
       super
       case @count
       when 0
-        @enemies << Enemy_1.new(Window.width / 4, -200)
-        @enemies << Enemy_1.new(Window.width / 2, -150)
-        @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
-      when 500
-        @enemies << Enemy_1.new(Window.width / 4, -200)
-        @enemies << Enemy_1.new(Window.width / 2, -150)
-        @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
-      when 1000
-        @enemies << Enemy_1.new(Window.width / 4, -200)
-        @enemies << Enemy_1.new(Window.width / 2, -150)
-        @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+        @enemies << Enemy_2.new(Window.width / 4, -200)
+        @enemies << Enemy_2.new(Window.width / 2, -150)
+        @enemies << Enemy_2.new(Window.width / 4 * 3, -200)
       end
     end
 

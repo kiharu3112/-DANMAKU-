@@ -6,6 +6,7 @@ Dir[
   'lib/fixtures/stage1/*.rb',
   'lib/fixtures/stage2/*.rb',
   'lib/fixtures/stage3/*.rb',
+  'lib/fixtures/stage4/*.rb',
   'lib/scene/*.rb',
   'lib/fixtures/*.rb',
   'lib/fixtures/result/*.rb',
