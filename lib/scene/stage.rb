@@ -6,23 +6,30 @@ module Scene
       @is_finish = false
       @enemies = []
       @scene = :start
-      @mosue = Fixture::Mouse.new
+      @player = Fixture::Player.new
     end
 
     def update
       super
-      @mouse.update
       start if @scene == :start
       game if @scene == :game
       end_scene if @scene == :end
     end
 
     def start
-
+      @player.y = Window.height + 10 if @count == 1
+      background_move_draw_1
+      @player.y -= 1
+      @player.image
+      if @player.y <= Window.height - @player.normal_image.height
+        @scene = :game
+        @count = 0
+      end
     end
 
     def game
-      Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(48, @font))
+      Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @font))
+      Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @font))
     end
 
     def end_scene

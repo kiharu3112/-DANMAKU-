@@ -1,10 +1,10 @@
 module Scene
   class Result
-    def initialize(player_health, stage_num)
+    def initialize(stage_num)
       if stage_num >= 6
         @next_scene = Scene::Ending.new
         @is_finish = true
-      elsif  player_health >= 1
+      elsif  $health >= 1
         @win = :true
       else
         @win = false

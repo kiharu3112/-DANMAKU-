@@ -1,6 +1,5 @@
 module Fixture
-  module Stage1
-      class Player_Gun1 < Fixture::Stage1::Bullet
+      class Player_Gun1 < Fixture::Bullet
           def initialize(x, y)
               super(x, y, Image.new(4, 9, C_YELLOW))
           end
@@ -14,7 +13,7 @@ module Fixture
           end
       end
 
-      class Player_Gun2 < Fixture::Stage1::Bullet
+      class Player_Gun2 < Fixture::Bullet
           def initialize(x, y)
               super(x, y, Image.new(4, 9, C_YELLOW))
           end
@@ -40,5 +39,4 @@ module Fixture
               self.x += 3
           end
       end
-  end
 end

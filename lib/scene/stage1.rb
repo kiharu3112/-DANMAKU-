@@ -2,7 +2,7 @@ module Scene
     class Stage1 < Scene::Stage
         include Fixture::Stage1
         def initialize
-            @player = Player.new
+            @player = Fixture::Player.new
             @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")
             @destroy_enemy = 0
             super
@@ -68,7 +68,7 @@ module Scene
                     if i === n
                         i.damage
                         if i.health <= 0
-                            @destroy_enemy += 1 
+                            @destroy_enemy += 1
                             $score += 10
                         end
 
@@ -79,26 +79,27 @@ module Scene
 
             ###############################################
             # check
-            if (@enemies.count == 0 && @count > 1300) || @player.health <= 0
+            if (@enemies.count == 0 && @count > 1300) || $health <= 0
                 @scene = :end
                 @player.image = @player.normal_image
             end
+            super
         end
 
         def end_scene
             super
             background_move_draw_2
-            if @player.health >= 1
+            if $health >= 1
                 @player.draw
                 @enemies.each { |n| n.draw }
                 @player.y -= 5
                 if @player.y < -10
                     @is_finish = true
-                    @next_scene = Scene::Result.new(@player.health, 1)
+                    @next_scene = Scene::Result.new(1)
                 end
             else
                 @is_finish = true
-                @next_scene = Scene::Result.new(@player.health, 1)
+                @next_scene = Scene::Result.new(1)
             end
         end
 

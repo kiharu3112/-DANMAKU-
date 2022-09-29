@@ -2,7 +2,7 @@ module Scene
   class Stage3 < Scene::Stage
     include Fixture::Stage1
     def initialize
-      @player = Player.new
+      @player = Fixture::Player.new
       @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")
       @destroy_enemy = 0
       super
@@ -13,26 +13,7 @@ module Scene
     end
 
     def start
-      if @count > 60
-        background_move_draw_1
-        Window.draw(Window.width / 2 - @carrier.width / 2, (@count - 60) * 4 - (@carrier.height - 300)  / 2, @carrier)
-        if @count > 360
-          @player.y -= 5
-        end
-        @player.image
-        if @count > 600
-          @player.y = Window.height + 50
-          @player.y -= (@count - 600)
-          if @player.y == Window.height - 60
-            @scene = :game
-            @count = 0
-          end
-        end
-      else
-        just_draw
-        Window.draw(Window.width / 2 - @carrier.width / 2, -1 * (@carrier.height - 300)  / 2, @carrier)
-        @player.image
-      end
+      super
     end
 
     def game
@@ -79,26 +60,27 @@ module Scene
 
       ###############################################
       # check
-      if (@enemies.count == 0 && @count > 1300) || @player.health <= 0
+      if (@enemies.count == 0 && @count > 1300) || $health <= 0
         @scene = :end
         @player.image = @player.normal_image
       end
+      super
     end
 
     def end_scene
       super
       background_move_draw_2
-      if @player.health >= 1
+      if $health >= 1
         @player.draw
         @enemies.each { |n| n.draw }
         @player.y -= 5
         if @player.y < -10
           @is_finish = true
-          @next_scene = Scene::Result.new(@player.health, 1)
+          @next_scene = Scene::Result.new(3)
         end
       else
         @is_finish = true
-        @next_scene = Scene::Result.new(@player.health, 1)
+        @next_scene = Scene::Result.new(3)
       end
     end
 

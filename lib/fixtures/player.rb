@@ -1,11 +1,8 @@
 module Fixture
-    module Stage1
         class Player < Sprite
-            attr_reader :health
             attr_accessor :bullets
             attr_reader :normal_image
             def initialize
-                @health = 5
                 self.x = Window.width / 2 - 5
                 self.y = Window.height - 100
                 @normal_image = Image.load("#{$PATH}/lib/images/fighter_zero_normal.png")
@@ -63,8 +60,7 @@ module Fixture
             end
 
             def damage
-                @health -= 1
+                $health -= 10
             end
         end
-    end
 end

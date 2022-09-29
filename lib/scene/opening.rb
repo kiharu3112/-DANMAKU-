@@ -61,6 +61,8 @@ module Scene
       if Input.mouse_push?(M_LBUTTON)
         if @mouse === @Select
           @next_scene = Scene::Stage1.new
+          $health = 50
+          $score = 0
           @is_finish = true
         elsif @mouse === @Ranking
           @next_scene = Scene::Ranking.new
