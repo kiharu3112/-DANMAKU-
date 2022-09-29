@@ -20,3 +20,4 @@
  - https://www.deviantart.com/tzoli/art/IJN-Shinano-Carrier-as-Sunk-858463208
  - https://soundeffect-lab.info/
  - https://hpgpixer.jp/image_icons/vehicle/icon_airplane.html
+ - http://www17.plala.or.jp/xxxxxxx/00ff/
