@@ -7,13 +7,6 @@
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/lib/SceneManager.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/SceneManager.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/result.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage1.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage3.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage4.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage4.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage5.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage5.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage6.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage6.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/main.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
