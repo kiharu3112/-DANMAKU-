@@ -20,5 +20,3 @@
  - https://www.deviantart.com/tzoli/art/IJN-Shinano-Carrier-as-Sunk-858463208
  - https://soundeffect-lab.info/
  - https://hpgpixer.jp/image_icons/vehicle/icon_airplane.html
-
-### 作者　松江工業高等専門学校３年　木島陽斗
