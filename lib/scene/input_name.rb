@@ -5,7 +5,6 @@ module Scene
       super
       @name = []
       @next_scene = nil
-      @input
       @finish = false
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
@@ -21,13 +20,13 @@ module Scene
       if @score_count < $score && @count % 2 == 0 && @count > 60
         @score_count += 1
       end
-      Window.draw_font(Window.width / 2 - 200, Window.height / 4, "SCORE IS : #{@score_count}", Font.new(64, @base_font))
+      Window.draw_font(Window.width / 2 - 200, Window.height / 4, "SCORE IS : #{@score_count}", Font.new(64, @font))
       Window.draw(Window.width / 3 - 100, Window.height / 2, @vertical_line)
       Window.draw(Window.width / 3 - 100, Window.height / 2, @beside_line)
       Window.draw(Window.width / 3 - 100, Window.height / 2 + 75, @beside_line)
       Window.draw(Window.width / 3 + 650,Window.height / 2, @vertical_line)
 
-      Window.draw_font(Window.width / 3 - 90, Window.height / 2 + 10, "#{@name.join}", Font.new(64, @base_font))
+      Window.draw_font(Window.width / 3 - 90, Window.height / 2 + 10, "#{@name.join}", Font.new(64, @font))
       n = input
       case n
       when "back"

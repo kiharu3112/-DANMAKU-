@@ -24,9 +24,5 @@ module Scene
       return true if Input.key_down?(K_ESCAPE)
       @is_finish
     end
-
-    private
-
-
   end
 end
