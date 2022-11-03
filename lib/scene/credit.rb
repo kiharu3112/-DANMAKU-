@@ -32,7 +32,7 @@ module Scene
 
     def update
       super
-      Window.draw_font(Window.width - 50, Window.height - 50, "#{@count}", Font.new(20))
+      #Window.draw_font(Window.width - 50, Window.height - 50, "#{@count}", Font.new(20))
       space = -30
       @message.count.times do |i|
         space += @message[i].size * 2
