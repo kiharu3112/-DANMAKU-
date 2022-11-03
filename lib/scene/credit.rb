@@ -43,13 +43,5 @@ module Scene
       Window.draw(Window.width / 2 - @qrcode.width / 2, Window.height + space - @count + 100, @qrcode)
       @is_finish = true if @count > 3100
     end
-
-    def finish?
-      super
-    end
-
-    def next_scene
-      @next_scene
-    end
   end
 end

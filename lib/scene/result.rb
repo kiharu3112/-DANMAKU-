@@ -1,5 +1,6 @@
 module Scene
   class Result
+    attr_reader :is_finish, :next_scene
     def initialize(stage_num)
       if stage_num >= 6
         @next_scene = Scene::Ending.new
@@ -84,15 +85,6 @@ module Scene
         @is_finish = true
       end
       @touch = false
-    end
-
-    def next_scene
-      @next_scene
-    end
-
-    def finish?
-      return true if Input.key_down?(K_ESCAPE)
-      @is_finish
     end
   end
 end

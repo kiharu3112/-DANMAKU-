@@ -2,8 +2,6 @@ module Scene
   class Stage < Scene::Base
     def initialize
       super
-      @next_scene = nil
-      @is_finish = false
       @enemies = []
       @scene = :start
       @player = Fixture::Player.new
@@ -12,6 +10,7 @@ module Scene
 
     def update
       super
+      @is_finish = true if Input.key_down?(K_ESCAPE)
       start if @scene == :start
       game if @scene == :game
       end_scene if @scene == :end
@@ -78,15 +77,6 @@ module Scene
         @is_finish = true
         @next_scene = Scene::Result.new(@stage_num)
       end
-    end
-
-    def finish?
-      return true if Input.key_down?(K_ESCAPE)
-      @is_finish
-    end
-
-    def next_scene
-      @next_scene
     end
 
     def background_move_draw_1

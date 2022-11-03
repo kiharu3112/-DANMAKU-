@@ -1,12 +1,12 @@
 module Scene
   class Ranking < Scene::Base
     def initialize
-      @is_finish = false
-      @next_scene = nil
+      super
       @font = 'x8y12pxTheStrongGamer'
     end
 
     def update
+      super
       File.open("rank.json") do |file|
         @data = JSON.load(file)
       end
@@ -22,14 +22,6 @@ module Scene
         next if @data["ranking"][n]["name"] == ""
         Window.draw_font(Window.width / 8, Window.height / 5 + 130 * n + 100, "#{n + 1}   #{@data["ranking"][n]["name"]}  score:#{@data["ranking"][n]["score"]}\n       date:#{@data["ranking"][n]["time"]}", Font.new(40, @font))
       end
-    end
-
-    def finish?
-      super
-    end
-
-    def next_scene
-      @next_scene
     end
   end
 end

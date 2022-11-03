@@ -4,8 +4,6 @@ module Scene
     def initialize
       super
       @name = []
-      @next_scene = nil
-      @finish = false
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
       File.open("rank.json") do |file|
@@ -39,19 +37,6 @@ module Scene
           @name << n
         end
       end
-
-      if Input.key_down?(K_ESCAPE)
-        @finish = true
-        @next_scene = nil
-      end
-    end
-
-    def finish?
-      super
-    end
-
-    def next_scene
-      @next_scene
     end
 
     def add_data

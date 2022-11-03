@@ -1,5 +1,6 @@
 module Scene
   class Base
+    attr_reader :is_finish, :next_scene
     def initialize
       @count = 0
       @background = Image.load("#{$PATH}/lib/images/Sea.png")
@@ -10,17 +11,9 @@ module Scene
     end
 
     def update
+      @next_scene = true if Input.key_down?(K_ESCAPE)
       @count += 1
       @mouse.update
-    end
-
-    def next_scene
-      raise NotImplementedError
-    end
-
-    def finish?
-      return true if Input.key_down?(K_ESCAPE)
-      @is_finish
     end
   end
 end

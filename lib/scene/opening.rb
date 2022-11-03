@@ -19,7 +19,6 @@ module Scene
       @ranking_check = false
       @check_credit = false
       @check_exit = false
-      @next_scene = nil
     end
 
     def update
@@ -98,13 +97,6 @@ module Scene
     def draw_line
       Window.draw(Window.width / 2, 0, Image.new(1, Window.height, C_RED))
       Window.draw(0, Window.height / 2, Image.new(Window.width, 1, C_RED))
-    end
-    def finish?
-      super
-    end
-
-    def next_scene
-      @next_scene
     end
   end
 end
