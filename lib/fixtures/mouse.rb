@@ -1,7 +1,7 @@
 module Fixture
     class Mouse < Sprite
         def initialize
-            self.image = Image.new(1, 1, C_WHITE)
+            self.image = Image.new(1, 1, [0,0,0,0])
         end
         def update
             self.x = Input.mouse_pos_x

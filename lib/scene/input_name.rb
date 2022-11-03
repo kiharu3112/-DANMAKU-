@@ -47,8 +47,7 @@ module Scene
     end
 
     def finish?
-      return true if Input.key_down?(K_ESCAPE)
-      @is_finish
+      super
     end
 
     def next_scene
@@ -69,7 +68,7 @@ module Scene
       end
       File.open("rank.json", "w") do |file|
         JSON.dump(@data, file)
-        p @data
+        #puts JSON.pretty_generate(@date)
       end
     end
   end
