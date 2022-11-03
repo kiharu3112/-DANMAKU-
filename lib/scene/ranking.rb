@@ -7,7 +7,7 @@ module Scene
     end
 
     def update
-      File.open("#{$PATH}/lib/rank.json") do |file|
+      File.open("rank.json") do |file|
         @data = JSON.load(file)
       end
       Window.draw_font(Window.width / 2 - 200, 80, "Ranking!", Font.new(64, @font))
@@ -25,8 +25,7 @@ module Scene
     end
 
     def finish?
-      return true if Input.key_down?(K_ESCAPE)
-      @is_finish
+      super
     end
 
     def next_scene

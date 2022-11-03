@@ -13,7 +13,7 @@ Dir[
 end
 $PATH = File.dirname(__FILE__)
 $score = 0
-Font.install("lib/fixtures/font/x8y12pxTheStrongGamer.ttf")
+Font.install("#{$PATH}/lib/fixtures/font/x8y12pxTheStrongGamer.ttf")
 scenemanager = SceneManager.new
 Window.loop do
   scenemanager.update

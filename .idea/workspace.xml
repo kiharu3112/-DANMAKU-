@@ -4,11 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="" />
+    <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/scene/credit.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rank.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/!DANMAKU!.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/rank.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/main.rb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,7 +45,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kijiharu/Desktop/for_ruby-con/lib/fixtures/stage6&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kijiharu/Desktop/for_ruby-con&quot;,
     &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;
   }
 }</component>
