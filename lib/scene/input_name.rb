@@ -45,11 +45,15 @@ module Scene
         "score":$score,
         "time":"#{@t.year}/#{@t.month}/#{@t.day} #{@t.hour}:#{@t.min == 0 ? '00' : @t.min}"
       }
+      begin
       5.times do |n|
         if @data["ranking"][n]["score"] < $score || @data["ranking"][n]["name"] == ""
           @data["ranking"].insert(n,@userdata)
           break
         end
+      end
+      rescue
+        @data["ranking"][0] = @userdata
       end
       File.open("rank.json", "w") do |file|
         JSON.dump(@data, file)
