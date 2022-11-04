@@ -10,7 +10,6 @@ module Scene
 
     def update
       super
-      @is_finish = true if Input.key_down?(K_ESCAPE)
       start if @scene == :start
       game if @scene == :game
       end_scene if @scene == :end
