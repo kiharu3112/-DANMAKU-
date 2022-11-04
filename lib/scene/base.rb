@@ -11,7 +11,7 @@ module Scene
     end
 
     def update
-      @next_scene = true if Input.key_down?(K_ESCAPE)
+      Window.close if Input.key_down?(K_ESCAPE)
       @count += 1
       @mouse.update
     end

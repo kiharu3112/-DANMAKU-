@@ -6,10 +6,7 @@ class SceneManager
   end
 
   def update
-    begin
     @scene.update
-    rescue => e
-    end
     @scene = @scene.next_scene if @scene.is_finish
     Window.close unless @scene
   end

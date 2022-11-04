@@ -27,13 +27,45 @@ module Scene
         sentence.new("SourceCode", h1),
         sentence.new("https://github.com/kiji-haru/for_ruby-con", 30)
       ]
+      @keys = [
+        K_A,
+        K_B,
+        K_C,
+        K_D,
+        K_E,
+        K_F,
+        K_G,
+        K_H,
+        K_I,
+        K_J,
+        K_L,
+        K_N,
+        K_M,
+        K_O,
+        K_P,
+        K_Q,
+        K_R,
+        K_S,
+        K_T,
+        K_U,
+        K_V,
+        K_W,
+        K_X,
+        K_Y,
+        K_Z,
+        K_RETURN,
+        K_SPACE
+      ]
       @next_scene = Scene::Opening.new
     end
 
     def update
       super
+      @keys.each do |n|
+        return @is_finish = true if Input.key_down?(n)
+      end
       #Window.draw_font(Window.width - 50, Window.height - 50, "#{@count}", Font.new(20))
-      space = -30
+      space = -50
       @message.count.times do |i|
         space += @message[i].size * 2
         Window.draw_font(80, Window.height + space - @count,

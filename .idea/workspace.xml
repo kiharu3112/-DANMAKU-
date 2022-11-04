@@ -9,12 +9,7 @@
       <change beforePath="$PROJECT_DIR$/lib/SceneManager.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/SceneManager.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/base.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/credit.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/credit.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/result.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stage.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rank.json" beforeDir="false" afterPath="$PROJECT_DIR$/rank.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

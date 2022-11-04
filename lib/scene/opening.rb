@@ -5,7 +5,7 @@ module Scene
       @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
       @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
 
-      al = [50,0,0,30] # 透明
+      al = [0,0,0,0] # 透明
       button_front = Image.new(460, 45, al)
       midi_front = Image.new(300, 38, al)
       mini_front = Image.new(260, 38, al)
@@ -80,18 +80,22 @@ module Scene
           $health = 100
           $score = 0
           @is_finish = true
+          @click_sound.play
         elsif @mouse === @ranking
           @next_scene = Scene::Ranking.new
           @is_finish = true
+          @click_sound.play
         elsif  @mouse === @credit
           @next_scene = Scene::Credit.new
+          @click_sound.play
           @is_finish = true
         elsif @mouse === @exit
           @next_scene = nil
+          @click_sound.play
           @is_finish = true
         end
       end
-      draw_line
+      #draw_line
     end
 
     def draw_line
