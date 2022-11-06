@@ -6,10 +6,19 @@ module Scene
       @name = []
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
-      File.open("rank.json") do |file|
-        @data = JSON.load(file)
+      begin
+        File.open("rank.json") do |file|
+          @data = JSON.load(file)
+        end
+      rescue => e
+        puts e
+        open('rank.json', 'w') do |f|
+          f.puts('{"ranking":[]}')
+        end
       end
+
       @t = Time.now
+      @next_scene = Scene::Ranking.new
     end
 
     def update
@@ -29,7 +38,6 @@ module Scene
       when "enter"
         if @name.count > 0
           @is_finish = true
-          @next_scene = Scene::Ranking.new
           add_data
         end
       else
@@ -45,19 +53,20 @@ module Scene
         "score":$score,
         "time":"#{@t.year}/#{@t.month}/#{@t.day} #{@t.hour}:#{@t.min == 0 ? '00' : @t.min}"
       }
-      begin
       5.times do |n|
-        if @data["ranking"][n]["score"] < $score || @data["ranking"][n]["name"] == ""
+        begin
+          if @data["ranking"][n]["score"] < $score || @data["ranking"][n]["name"] == ""
+            @data["ranking"].insert(n,@userdata)
+            break
+          end
+        rescue
           @data["ranking"].insert(n,@userdata)
           break
         end
       end
-      rescue
-        @data["ranking"][0] = @userdata
-      end
       File.open("rank.json", "w") do |file|
         JSON.dump(@data, file)
-        #puts JSON.pretty_generate(@date)
+        file.close
       end
     end
   end
