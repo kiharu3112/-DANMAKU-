@@ -6,11 +6,9 @@ module Scene
       @stage_num = 6
       @enemy_num = 9
     end
-
     def update
       super
     end
-
     def start
       super
     end
@@ -48,17 +46,7 @@ module Scene
         @count = 0
       end
     end
-
     def end_scene
-      super
-
-    end
-
-    def finish?
-      super
-    end
-
-    def next_scene
       super
     end
   end
