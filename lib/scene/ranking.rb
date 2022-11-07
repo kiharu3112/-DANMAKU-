@@ -89,7 +89,7 @@ module Scene
           Window.draw_font(Window.width / 10, Window.height / 5 + 20, "👑1  #{@data["ranking"][0]["name"]}   score:#{@data["ranking"][0]["score"]}\n     date:#{@data["ranking"][0]["time"]}", Font.new(48, @font))
           4.times do |i|
             n = i + 1
-            next if @data["ranking"][n]["name"] == ""
+            break if @data["ranking"][n] == nil
             Window.draw_font(Window.width / 8, Window.height / 5 + 130 * n + 100, "#{n + 1}   #{@data["ranking"][n]["name"]}  score:#{@data["ranking"][n]["score"]}\n       date:#{@data["ranking"][n]["time"]}", Font.new(40, @font))
           end
         else
