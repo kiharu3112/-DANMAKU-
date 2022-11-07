@@ -7,7 +7,7 @@ Dir[
   'lib/scene/*.rb',
   'lib/fixtures/*.rb',
   'lib/fixtures/result/*.rb',
-  'lib/font.rb'
+  'lib/scene/results/*.rb'
 ].each do |file|
   require_relative file
 end

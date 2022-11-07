@@ -1,11 +1,10 @@
 module Scene
     class Stage1 < Scene::Stage
-        include Fixture::Stage
         def initialize
             super
             @carrier = Image.load("#{$PATH}/lib/images/Carrier.png")
             @enemy_num = 9
-            @stage_num = 1
+            @next_scene = Scene::Results::Result1.new
         end
 
         def update

@@ -1,5 +1,6 @@
 module Scene
   class Stage < Scene::Base
+    include Fixture::Stage
     def initialize
       super
       @enemies = []
@@ -69,11 +70,9 @@ module Scene
         @player.y -= 5
         if @player.y < -10
           @is_finish = true
-          @next_scene = Scene::Result.new(@stage_num)
         end
       else
         @is_finish = true
-        @next_scene = Scene::Result.new(@stage_num)
       end
     end
 

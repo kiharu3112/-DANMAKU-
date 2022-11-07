@@ -1,9 +1,8 @@
 module Scene
   class Stage6 < Scene::Stage
-    include Fixture::Stage
     def initialize
       super
-      @stage_num = 6
+      @next_scene = Scene::Results::Result6.new
       @enemy_num = 9
     end
     def update
