@@ -56,13 +56,5 @@ module Scene
         def end_scene
             super
         end
-
-        def finish?
-            super
-        end
-
-        def next_scene
-            super
-        end
     end
 end

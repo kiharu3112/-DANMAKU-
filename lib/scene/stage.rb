@@ -5,7 +5,6 @@ module Scene
       @enemies = []
       @scene = :start
       @player = Fixture::Player.new
-      @enemy_num = 100
     end
 
     def update
