@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/SceneManager.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/SceneManager.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/mouse.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/fixtures/result/input.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/result/input.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage/bullet.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage/bullet.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/base.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/credit.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/credit.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rank.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/result.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/main.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +41,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2FRkiYmTBcDvmstu63bGNpwXgtU" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -38,16 +52,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "C:/Users/kijiharu/Desktop/for_ruby-con",
-    "ruby.rails.projectView.checked": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kijiharu/Desktop/for_ruby-con&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage6" />
@@ -235,6 +251,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/for_ruby_con@ruby_main_rb.rcov" NAME="ruby main.rb のカバレッジ結果" MODIFIED="1667719719185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
+    <SUITE FILE_PATH="coverage/for_ruby_con@ruby_main_rb.rcov" NAME="ruby main.rb のカバレッジ結果" MODIFIED="1667720742596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
   </component>
 </project>

@@ -84,7 +84,7 @@ module Fixture
     return "↓" if Input.key_push?(K_DOWNARROW)
     return " " if Input.key_push?(K_SPACE)
     return "@" if Input.key_push?(K_AT)
-    return `\\` if Input.key_push?(K_UNDERLINE)
-    return "enter" if Input.key_push?(K_NUMPADENTER)
+    return`\\` if Input.key_push?(K_UNDERLINE)
+    "enter" if Input.key_push?(K_NUMPADENTER)
   end
 end

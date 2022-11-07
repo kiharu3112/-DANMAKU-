@@ -5,9 +5,11 @@ class SceneManager
     Window.bgcolor = darklategrey
   end
 
-  def update
-    @scene.update
-    @scene = @scene.next_scene if @scene.is_finish
-    Window.close unless @scene
+  def start
+    Window.loop do
+      @scene.update
+      @scene = @scene.next_scene if @scene.is_finish
+      Window.close unless @scene
+    end
   end
 end

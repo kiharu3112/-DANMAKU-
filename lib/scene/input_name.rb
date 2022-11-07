@@ -17,7 +17,7 @@ module Scene
         end
       end
 
-      @t = Time.now
+      @time = Time.now
       @next_scene = Scene::Ranking.new
     end
 
@@ -51,15 +51,14 @@ module Scene
       @userdata = {
         "name":@name.join,
         "score":$score,
-        "time":"#{@t.year}/#{@t.month}/#{@t.day} #{@t.hour}:#{@t.min == 0 ? '00' : @t.min}"
+        "time":"#{@time.year}/#{@time.month}/#{@time.day} #{@time.hour}:#{@time.min == 0 ? '00' : @time.min}"
       }
       5.times do |n|
-        begin
-          if @data["ranking"][n]["score"] < $score || @data["ranking"][n]["name"] == ""
-            @data["ranking"].insert(n,@userdata)
-            break
-          end
-        rescue
+        if @data["ranking"][n] == nil
+          @data["ranking"].insert(n,@userdata)
+          break
+        end
+        if @data["ranking"][n]["score"] < $score || @data["ranking"][n]["name"] == ""
           @data["ranking"].insert(n,@userdata)
           break
         end

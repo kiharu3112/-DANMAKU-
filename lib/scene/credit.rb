@@ -62,17 +62,17 @@ module Scene
     def update
       super
       @keys.each do |n|
-        return @is_finish = true if Input.key_down?(n)
+        return @is_finish = true if Input.key_push?(n)
       end
       #Window.draw_font(Window.width - 50, Window.height - 50, "#{@count}", Font.new(20))
       space = -50
       @message.count.times do |i|
         space += @message[i].size * 2
-        Window.draw_font(80, Window.height + space - @count,
+        Window.draw_font(80, Window.height + space - @count * 1.5,
                          "#{@message[i].str}",
                          Font.new(@message[i].size, @font))
       end
-      Window.draw(Window.width / 2 - @qrcode.width / 2, Window.height + space - @count + 100, @qrcode)
+      Window.draw(Window.width / 2 - @qrcode.width / 2, Window.height + space - @count * 1.5 + 100, @qrcode)
       @is_finish = true if @count > 3100
     end
   end

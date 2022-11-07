@@ -3,7 +3,10 @@ module Fixture
     class Bullet < Sprite
       attr_accessor :hit
       def initialize(x, y, image)
-        super(x, y, image)
+        super
+        self.x = x
+        self.y = y
+        self.image = image
         @hit = false
       end
       def update
