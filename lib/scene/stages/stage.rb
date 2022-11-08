@@ -7,6 +7,7 @@ module Scene
         @enemies = []
         @scene = :start
         @player = Fixture::Player.new
+        @enemy_bullet = []
       end
 
       def update
@@ -39,14 +40,40 @@ module Scene
         #########################################################################
         @enemies.each { |n| n.update }
         @enemies.delete_if { |n| n.health <= 0 }
-        @enemies.each do |n|
-          n.bullets.each do |i|
-            if i === @player
-              @player.damage
-              i.hit = true
+
+
+        @enemy_bullet.each do |n|
+          if n === @player
+            @player.damage
+            n.hit = true
+          end
+        end
+
+        @enemies.each do|n|
+          if n.name == "Enemy_1"
+            if n.fire
+              @enemy_bullet << Enemy_1_Gun_1.new(n.x + 3, n.y + 30)
+              @enemy_bullet << Enemy_1_Gun_1.new(n.x + 40, n.y + 30)
+              @enemy_bullet << Enemy_1_Gun_2.new(n.x + 3, n.y + 30)
+              @enemy_bullet << Enemy_1_Gun_3.new(n.x + 40, n.y + 30)
+            end
+          elsif n.name == "Enemy_2"
+            if n.fire1
+              @enemy_bullet << Enemy_2_Gun_1.new(n.x + 3, n.y + 30)
+              @enemy_bullet << Enemy_2_Gun_1.new(n.x + 40, n.y + 30)
+              @enemy_bullet << Enemy_2_Gun_2.new(n.x + 3, n.y + 30)
+              @enemy_bullet << Enemy_2_Gun_3.new(n.x + 40, n.y + 30)
+            end
+            if n.fire2
+              @enemy_bullet << Enemy_2_Gun_6.new(n.x + 3, n.y + 30)
+              @enemy_bullet << Enemy_2_Gun_7.new(n.x + 40, n.y + 30)
+              @enemy_bullet << Enemy_2_Gun_4.new(n.x + 3, n.y + 30)
+              @enemy_bullet << Enemy_2_Gun_5.new(n.x + 40, n.y + 30)
             end
           end
         end
+        @enemy_bullet.each { |n| n.update}
+        @enemy_bullet.delete_if {|n| n.hit }
 
         @player.bullets.each do |n|
           @enemies.each do |i|

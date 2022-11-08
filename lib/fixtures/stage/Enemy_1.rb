@@ -1,8 +1,9 @@
 module Fixture
   module Stage
     class Enemy_1 < Sprite
-      attr_reader :health, :bullets
+      attr_reader :health, :fire, :name
       def initialize(x, y)
+        @name = "Enemy_1"
         self.x = x
         self.y = y
         @health = 5
@@ -11,11 +12,11 @@ module Fixture
         self.image = @normal
         @count = 0
         @shot_timer = 0
-        @bullets = []
         @shot = false
         @shot_num = 0
       end
       def update
+        @fire = false
         return 1 if @health <= 0
         if @shot_num > 3
           @shot = false
@@ -26,56 +27,52 @@ module Fixture
         if @count % 200 == 0
           @shot = true
         end
-        @bullets.each { |n| n.update }
-        @bullets.delete_if { |n|n.hit }
+        move
+      end
+      def damage
+        @health -= 1
+      end
+
+      def move
         if @count < 300
           self.y += 1
           if @shot && @count % 10 == 0
             @shot_num += 1
-            shot
+            @fire = true
             @shot_timer = 0
           end
         elsif @count >= 300 && @count < 500
           self.x -= 2.5
           if @shot && @count % 15 == 0
             @shot_num += 1
-            shot
+            @fire = true
             @shot_timer = 0
           end
         elsif @count >= 500 && @count < 700
           self.x += 2.5
           if @shot && @count % 10 == 0
             @shot_num += 1
-            shot
+            @fire = true
             @shot_timer = 0
           end
         elsif @count >= 700 && @count < 900
           self.x += 2.5
           if @shot && @count % 10 == 0
             @shot_num += 1
-            shot
+            @fire = true
             @shot_timer = 0
           end
         elsif @count >= 900 && @count < 1100
           self.x -= 2.5
           if @shot && @count % 10 == 0
             @shot_num += 1
-            shot
+            @fire = true
             @shot_timer = 0
           end
         else
           @count = 300
         end
         self.draw
-      end
-      def shot
-        @bullets << Enemy_1_Gun_1.new(self.x + 3, self.y + 30)
-        @bullets << Enemy_1_Gun_1.new(self.x + 40, self.y + 30)
-        @bullets << Enemy_1_Gun_2.new(self.x + 3, self.y + 30)
-        @bullets << Enemy_1_Gun_3.new(self.x + 40, self.y + 30)
-      end
-      def damage
-        @health -= 1
       end
     end
   end
