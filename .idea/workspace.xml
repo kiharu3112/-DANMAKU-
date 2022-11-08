@@ -8,24 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/sounds/bgm_1.mid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sounds/boss_bgm.mid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/for_ruby-con.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/for_ruby-con.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/SceneManager.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/SceneManager.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/player.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result1.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result3.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result4.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result4.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/results/result5.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result5.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage1.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage3.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage4.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage4.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage5.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage5.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stage6.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage6.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/main.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,18 +44,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kijiharu/Desktop/for_ruby-con&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "C:/Users/kijiharu/Desktop/for_ruby-con",
+    "ruby.rails.projectView.checked": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage6" />

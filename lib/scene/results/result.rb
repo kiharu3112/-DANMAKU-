@@ -17,6 +17,7 @@ module Scene
 
       def update
         super
+        @input = Input.pads
         if @score_count < $score
           @score_count += 1
         end
@@ -29,8 +30,8 @@ module Scene
         Window.draw_font(Window.width / 2 - 330, Window.height / 2  - 330, "Stage Clear!", Font.new(100, @font), option={color:@gold})
 
         Window.draw_font(Window.width / 2 - 170, Window.height / 2  - 60, "SCORE IS : #{@score_count}", Font.new(48, @font), option={color:@gold})
-        @select = 0 if Input.key_push?(K_W)
-        @select = 1 if Input.key_push?(K_S)
+        @select = 0 if Input.key_push?(K_W) || Input.pad_push?(22)
+        @select = 1 if Input.key_push?(K_S) || Input.pad_push?(23)
 
         @next_button.draw
         Window.draw_font(Window.width / 2 - 240, Window.height / 3 * 2 - 30, ">>Next Stage", Font.new(64, @font), option={color:@gold}) if @stage_num != 6
@@ -42,16 +43,13 @@ module Scene
         Window.draw_font(Window.width / 2 - 100, Window.height / 3 * 2 + 100, "Retire", Font.new(48, @font), option={color:@gold})
         Window.draw(Window.width / 2 - 100, Window.height / 3 * 2 + 150, Image.new(190, 3, @gold)) if @select == 1
 
-        if Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)
-          @is_finish = true
-          @next_scene = Scene::NameInput.new if @select == 1
-        end
+        @is_finish = Input.pad_push?(5)
       end
 
       def lose
         Window.draw(0, 0, @lose_background)
         Window.draw_font(Window.width / 2 - 220, Window.height / 2  - 280, "You down", Font.new(100, @font), option={color:@gold})
-        @is_finish = true if input
+        @is_finish = Input.pad_push?(5)
         @next_scene = Scene::NameInput.new
       end
 

@@ -15,10 +15,12 @@ module Fixture
             end
 
             def update
+                @input = Input.pads
+
                 @bullets.each { |n| n.update }
                 @bullets.delete_if { |n| n.hit }
                 @shot_timer += 1
-                if Input.key_down?(K_SPACE) && @shot_timer > 5
+                if ( Input.key_down?(K_SPACE) || @input.include?(5)) && @shot_timer > 5
                     @shot_timer = 0
                     @bullets << Player_Gun1.new(self.x + 5, self.y)
                     @bullets << Player_Gun1.new(self.x + 43, self.y)
@@ -44,14 +46,14 @@ module Fixture
             end
 
             def move
-                if Input.key_down?(K_W)
+                if Input.key_down?(K_W) || @input.include?(2) || @input.include?(22)
                     self.y -= 5
-                elsif Input.key_down?(K_S)
+                elsif Input.key_down?(K_S) || @input.include?(3) || @input.include?(23)
                     self.y += 5
                 end
-                if Input.key_down?(K_A)
+                if Input.key_down?(K_A) || @input.include?(0) || @input.include?(20)
                     self.x -= 8
-                elsif Input.key_down?(K_D)
+                elsif Input.key_down?(K_D) || @input.include?(1) || @input.include?(21)
                     self.x += 8
                 end
                 self.y = Window.height - @image_height if self.y > Window.height - @image_height

@@ -25,11 +25,16 @@ module Scene
 
     def update
       super
-      @select += 1 if Input.key_push?(K_S) || Input.key_push?(K_DOWNARROW)
-      @select -= 1 if Input.key_push?(K_W) || Input.key_push?(K_UPARROW)
+      @select += 1 if Input.key_push?(K_S) || Input.key_push?(K_DOWNARROW) || Input.pad_push?(23)
+      @select -= 1 if Input.key_push?(K_W) || Input.key_push?(K_UPARROW) || Input.pad_push?(22)
       @select = 0 if @select < 0
       @select = 3 if @select > 3
-      Window.draw_font(Window.width / 2 - 600, Window.height / 6, "!DANMAKU!", Font.new(200, @font))
+      begin
+        Window.draw_font(Window.width / 2 - 600, Window.height / 6, "!DANMAKU!", Font.new(200, @font))
+      rescue => e
+        puts e
+        Window.draw_font(Window.width / 2 - 600, Window.height / 6, "!DANMAKU!", Font.new(200, @font))
+      end
 
       @start.draw
       Window.draw_font(Window.width / 2 - 220, Window.height / 2, "🎮GameStart!🎮", Font.new(56, @font))
@@ -80,7 +85,7 @@ module Scene
       end
 
 
-      if Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE)
+      if Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE) || Input.pad_push?(5)
         if @select == 0
           @next_scene = Scene::Stages::Stage1.new
           $health = 100
