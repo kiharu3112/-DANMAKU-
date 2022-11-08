@@ -82,7 +82,7 @@ module Scene
 
       if Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE)
         if @select == 0
-          @next_scene = Scene::Stage1.new
+          @next_scene = Scene::Stages::Stage1.new
           $health = 100
           $score = 0
           @is_finish = true

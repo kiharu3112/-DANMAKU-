@@ -3,7 +3,7 @@ module Scene
     class Result2 < Scene::Results::Result_Base
       def initialize
         super
-        @next_scene = Scene::Stage3.new
+        @next_scene = Scene::Stages::Stage3.new
         @win_background = Image.load("#{$PATH}/lib/images/result/win-picture01.jpg")
         @lose_background = Image.load("#{$PATH}/lib/images/result/zero_destroyed.png")
       end
