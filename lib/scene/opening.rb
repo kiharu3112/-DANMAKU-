@@ -1,111 +1,52 @@
-module Scene
-  class Opening < Scene::Base
-    def initialize
-      super
-      @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
-      @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
+# frozen_string_literal: true
 
-      al = [0,0,0,0] # 透明
-      button_front = Image.new(460, 45, al)
-      midi_front = Image.new(300, 38, al)
-      mini_front = Image.new(260, 38, al)
-      micro_font = Image.new(130, 40, al)
-      @start = Sprite.new(Window.width / 2 - button_front.width / 2 + 5, Window.height / 2 - button_front.height / 2 + 40, button_front)
-      @ranking = Sprite.new(Window.width / 2 - midi_front.width / 2, Window.height / 3 * 2 - 10, midi_front)
-      @credit = Sprite.new(Window.width / 2 - mini_front.width / 2, Window.height / 3 * 2 + 90, mini_front)
-      @exit = Sprite.new(Window.width / 2 - midi_front.width / 2 + 80, Window.height / 4 * 3 + 100, micro_font)
-      @check_start = false
-      @ranking_check = false
-      @check_credit = false
-      @check_exit = false
+class Scene::Opening < Scene::Base
+  def initialize
+    super
+    @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
+    @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
+    @select_y = 0
+  end
 
-      @select = 0 # start = 0, ranking = 1, credit = 2, exit = 3
-
+  def update
+    super
+    if Input.key_push?(K_S) || Input.key_push?(K_DOWNARROW) || Input.pad_push?(23)
+      @select_y += 1
+      @touch_sound.play
     end
+    if Input.key_push?(K_W) || Input.key_push?(K_UPARROW) || Input.pad_push?(22)
+      @select_y -= 1
+      @touch_sound.play
+    end
+    @select_y = 0 if @select_y.negative?
+    @select_y = 5 if @select_y > 4
+    Window.draw_font(200, Window.height / 6 - 50, '!DANMAKU!', Font.new(150, @font))
+    Window.draw_font(Window.width / 2 - 200, Window.height - 600, '🎮 GameStart 🎮', Font.new(48, @font))
+    Window.draw_font(Window.width / 2 - 200, Window.height - 500, '👑 　Ranking  👑', Font.new(48, @font))
+    Window.draw_font(Window.width / 2 - 200, Window.height - 400, '⚙  　Option　 ⚙', Font.new(48, @font))
+    Window.draw_font(Window.width / 2 - 200, Window.height - 300, '❓    Help   ❓', Font.new(48, @font))
+    Window.draw_font(Window.width / 2 - 200, Window.height - 200, ' 　   Exit   ➡', Font.new(48, @font))
 
-    def update
-      super
-      @select += 1 if Input.key_push?(K_S) || Input.key_push?(K_DOWNARROW) || Input.pad_push?(23)
-      @select -= 1 if Input.key_push?(K_W) || Input.key_push?(K_UPARROW) || Input.pad_push?(22)
-      @select = 0 if @select < 0
-      @select = 3 if @select > 3
-      begin
-        Window.draw_font(Window.width / 2 - 600, Window.height / 6, "!DANMAKU!", Font.new(200, @font))
-      rescue => e
-        puts e
-        Window.draw_font(Window.width / 2 - 600, Window.height / 6, "!DANMAKU!", Font.new(200, @font))
-      end
+    Window.draw(Window.width / 2 - 220, Window.height - 50 - 100 * (5 - @select_y), Image.new(460, 3, C_WHITE))
+    return unless Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE) || Input.pad_push?(5)
 
-      @start.draw
-      Window.draw_font(Window.width / 2 - 220, Window.height / 2, "🎮GameStart!🎮", Font.new(56, @font))
-      Window.draw(Window.width / 2 - 220, Window.height / 2 + 60, Image.new(460, 3, C_WHITE)) if @select == 0
-      if @select == 0 && !@check_start
-        @check_start = true
-        @touch_sound.play
-      elsif @select == 0 && @check_start
-        @check_start = true
-      else
-        @check_start = false
-      end
-
-      @ranking.draw
-      Window.draw_font(Window.width / 2 - 150, Window.height / 2 + 140, "👑Ranking👑", Font.new(48, @font))
-      Window.draw(Window.width / 2 - 150, Window.height / 2 + 190, Image.new(300, 3, C_WHITE)) if @select == 1
-      if @select == 1 && !@ranking_check
-        @ranking_check = true
-        @touch_sound.play
-      elsif @select == 1 && @ranking_check
-        @ranking_check = true
-      else
-        @ranking_check = false
-      end
-
-      @credit.draw
-      Window.draw_font(Window.width / 2 - 130, Window.height / 2 + 240, "📃Credit📃", Font.new(48, @font))
-      Window.draw(Window.width / 2 - 130, Window.height / 2 + 290, Image.new(260, 3, C_WHITE)) if @select == 2
-      if @select == 2 && !@check_credit
-        @check_credit = true
-        @touch_sound.play
-      elsif @select == 2 && @check_credit
-        @check_credit = true
-      else
-        @check_credit = false
-      end
-
-      @exit.draw
-      Window.draw_font(Window.width / 2 - 65, Window.height / 4 * 3 + 90, "Exit", Font.new(48, @font))
-      Window.draw(Window.width / 2 - 65, Window.height / 4 * 3 + 140, Image.new(125, 3, C_WHITE)) if @select == 3
-      if @select == 3 && !@check_exit
-        @check_exit = true
-        @touch_sound.play
-      elsif @select == 3 && @check_exit
-        @check_exit = true
-      else
-        @check_exit = false
-      end
-
-
-      if Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE) || Input.pad_push?(5)
-        if @select == 0
-          @next_scene = Scene::Stages::Stage1.new
-          $health = 100
-          $score = 0
-          @is_finish = true
-          @click_sound.play
-        elsif @select == 1
-          @next_scene = Scene::Ranking.new
-          @is_finish = true
-          @click_sound.play
-        elsif  @select == 2
-          @next_scene = Scene::Credit.new
-          @click_sound.play
-          @is_finish = true
-        elsif @select == 3
-          @next_scene = nil
-          @click_sound.play
-          @is_finish = true
-        end
-      end
+    @is_finish = true
+    @click_sound.play
+    case @select_y
+    when 0
+      @next_scene = Scene::Stages::Stage1.new
+      $health = 100
+      $score = 0
+    when 1
+      @next_scene = Scene::Ranking.new
+    when 2
+      @next_scene = Scene::Option.new
+    when 2
+      @next_scene = Scene::Help.new
+    when 4
+      @next_scene = nil
+    else
+      @next_scene = nil
     end
   end
 end
