@@ -16,7 +16,6 @@ module Scene
         game if @scene == :game
         end_scene if @scene == :end
       end
-
       def start
         @player.y = Window.height + 10 if @count == 1
         background_move_draw_1
