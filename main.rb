@@ -13,6 +13,7 @@ Dir[
   require_relative file
 end
 $PATH = File.dirname(__FILE__)
+$lnag = "ja"
 $score = 0
 Font.install("#{$PATH}/lib/fixtures/font/x8y12pxTheStrongGamer.ttf")
 SceneManager.new.start

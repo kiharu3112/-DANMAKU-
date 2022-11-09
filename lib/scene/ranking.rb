@@ -45,16 +45,9 @@ module Scene
       show_cat(@count) if @count < 100
       show_rank if @count > 100
 
-      ## 先に開いてファイルの存在を確認なければ作る
       if @count == 100
-        File.open("rank.json") do |file|
+        File.open("user.json") do |file|
           @data = JSON.load(file)
-        end
-        if @data == nil
-          open('rank.json', 'w') do |f|
-            f.puts('{"ranking":[]}')
-            f.close
-          end
         end
       end
     end

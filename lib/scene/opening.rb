@@ -24,7 +24,7 @@ class Scene::Opening < Scene::Base
     Window.draw_font(Window.width / 2 - 200, Window.height - 600, '🎮 GameStart 🎮', Font.new(48, @font))
     Window.draw_font(Window.width / 2 - 200, Window.height - 500, '👑 　Ranking  👑', Font.new(48, @font))
     Window.draw_font(Window.width / 2 - 200, Window.height - 400, '⚙  　Option　 ⚙', Font.new(48, @font))
-    Window.draw_font(Window.width / 2 - 200, Window.height - 300, '❓    Help   ❓', Font.new(48, @font))
+    Window.draw_font(Window.width / 2 - 200, Window.height - 300, '❓    Guide   ❓', Font.new(48, @font))
     Window.draw_font(Window.width / 2 - 200, Window.height - 200, ' 　   Exit   ➡', Font.new(48, @font))
 
     Window.draw(Window.width / 2 - 220, Window.height - 50 - 100 * (5 - @select_y), Image.new(460, 3, C_WHITE))

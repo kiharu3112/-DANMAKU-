@@ -7,12 +7,12 @@ module Scene
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
       begin
-        File.open("rank.json") do |file|
+        File.open("user.json") do |file|
           @data = JSON.load(file)
         end
       rescue => e
         puts e
-        open('rank.json', 'w') do |f|
+        open('user.json', 'w') do |f|
           f.puts('{"ranking":[]}')
         end
       end
@@ -63,8 +63,9 @@ module Scene
           break
         end
       end
-      File.open("rank.json", "w") do |file|
-        JSON.dump(@data, file)
+      File.open("user.json", "w") do |file|
+        @data = JSON.pretty_generate(@data)
+        file.puts(@data)
         file.close
       end
     end

@@ -1,5 +1,5 @@
 module Scene
-  class Help < Scene::Base
+  class Guide < Scene::Base
     def initialize
       super
       @next_scene = Scene::Opening.new
