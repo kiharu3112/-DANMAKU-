@@ -8,27 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/images/option/arrow_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/en_alert_no.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/en_alert_yes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/en_delete_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/en_delete_select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/en_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/en_select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_alert_no.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_alert_yes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_delete_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_delete_select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_select.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/option/arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/option/arrow_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/option/en_save_normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/option/en_save_select.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/option/ja_save_normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/option/ja_save_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/option.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/option.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,19 +53,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "C:/Users/kijiharu/Desktop/for_ruby-con/lib/images/option",
-    "ruby.rails.projectView.checked": "true",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "two.files.diff.last.used.file": "C:/Users/kijiharu/Desktop/for_ruby-con/lib/scene/guid.rb"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kijiharu/Desktop/for_ruby-con/lib/images/option&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/kijiharu/Desktop/for_ruby-con/lib/scene/guid.rb&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\images\option" />
@@ -301,6 +284,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/for_ruby_con@ruby_main_rb.rcov" NAME="ruby main.rb のカバレッジ結果" MODIFIED="1667835500273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
+    <SUITE FILE_PATH="coverage/for_ruby_con@player_gun.rcov" NAME="player_gun のカバレッジ結果" MODIFIED="1668108672846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
     <SUITE FILE_PATH="coverage/for_ruby_con@opening.rcov" NAME="opening のカバレッジ結果" MODIFIED="1668010734762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
   </component>
 </project>

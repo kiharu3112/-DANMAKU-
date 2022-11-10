@@ -40,8 +40,6 @@ module Scene
 
     def update
       super
-      Window.draw_font(Window.width / 2 - 150, 80, "Ranking!", Font.new(64, @font))
-
       show_cat(@count) if @count < 100
       show_rank if @count > 100
 
@@ -77,7 +75,8 @@ module Scene
     def show_rank
       input_key = input
       @is_finish = true if input_key
-      begin
+      if $lang == "en"
+        Window.draw_font(Window.width / 2 - 150, 80, "Ranking!", Font.new(64, @font))
         if @data["ranking"].count > 0
           Window.draw_font(Window.width / 10, Window.height / 5 + 20, "👑1  #{@data["ranking"][0]["name"]}   score:#{@data["ranking"][0]["score"]}\n     date:#{@data["ranking"][0]["time"]}", Font.new(48, @font))
           4.times do |i|
@@ -88,8 +87,18 @@ module Scene
         else
           Window.draw_font(Window.width / 2 - 100, Window.height / 2 - 100,"No DATA", Font.new(48, @font))
         end
-      rescue => e
-        puts e
+      else
+        Window.draw_font(Window.width / 2 - 100, 80, "ランキング!", Font.new(64, @font))
+        if @data["ranking"].count > 0
+          Window.draw_font(Window.width / 10, Window.height / 5 + 20, "👑1  #{@data["ranking"][0]["name"]}   スコア:#{@data["ranking"][0]["score"]}\n     日時:#{@data["ranking"][0]["time"]}", Font.new(48, @font))
+          4.times do |i|
+            n = i + 1
+            break if @data["ranking"][n] == nil
+            Window.draw_font(Window.width / 8, Window.height / 5 + 130 * n + 100, "#{n + 1}   #{@data["ranking"][n]["name"]}  スコア:#{@data["ranking"][n]["score"]}\n       日時:#{@data["ranking"][n]["time"]}", Font.new(40, @font))
+          end
+        else
+          Window.draw_font(Window.width / 2 - 100, Window.height / 2 - 100,"データなし", Font.new(48, @font))
+        end
       end
     end
   end

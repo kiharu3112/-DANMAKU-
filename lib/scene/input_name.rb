@@ -6,25 +6,22 @@ module Scene
       @name = []
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
-      begin
-        File.open("user.json") do |file|
-          @data = JSON.load(file)
-        end
-      rescue => e
-        puts e
-        open('user.json', 'w') do |f|
-          f.puts('{"ranking":[]}')
-        end
+      File.open("user.json") do |file|
+        @data = JSON.load(file)
       end
-
       @time = Time.now
       @next_scene = Scene::Ranking.new
     end
 
     def update
       super
-      Window.draw_font(Window.width / 2 - 500, Window.height / 5, "Please Input Your Name", Font.new(64, @font))
-      Window.draw_font(Window.width / 2 - 230, Window.height / 3, "SCORE IS : #{$score}", Font.new(64, @font))
+      if $lang == "en"
+        Window.draw_font(Window.width / 2 - 500, Window.height / 5, "Please Input Your Name", Font.new(64, @font))
+        Window.draw_font(Window.width / 2 - 230, Window.height / 3, "SCORE IS : #{$score}", Font.new(64, @font))
+      else
+        Window.draw_font(Window.width / 2 - 500, Window.height / 5, "ナマエヲニュウリョクシテクダサイ", Font.new(64, @font))
+        Window.draw_font(Window.width / 2 - 230, Window.height / 3, "アナタノスコアハ : #{$score}テン", Font.new(64, @font))
+      end
       Window.draw(Window.width / 3 - 100, Window.height / 2, @vertical_line)
       Window.draw(Window.width / 3 - 100, Window.height / 2, @beside_line)
       Window.draw(Window.width / 3 - 100, Window.height / 2 + 75, @beside_line)
