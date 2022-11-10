@@ -19,7 +19,7 @@ class Scene::Opening < Scene::Base
       @touch_sound.play
     end
     @select_y = 0 if @select_y.negative?
-    @select_y = 5 if @select_y > 4
+    @select_y = 4 if @select_y > 4
     Window.draw_font(200, Window.height / 6 - 50, '!DANMAKU!', Font.new(150, @font))
     Window.draw_font(Window.width / 2 - 200, Window.height - 600, '🎮 GameStart 🎮', Font.new(48, @font))
     Window.draw_font(Window.width / 2 - 200, Window.height - 500, '👑 　Ranking  👑', Font.new(48, @font))
@@ -27,7 +27,7 @@ class Scene::Opening < Scene::Base
     Window.draw_font(Window.width / 2 - 200, Window.height - 300, '❓    Guide   ❓', Font.new(48, @font))
     Window.draw_font(Window.width / 2 - 200, Window.height - 200, ' 　   Exit   ➡', Font.new(48, @font))
 
-    Window.draw(Window.width / 2 - 220, Window.height - 50 - 100 * (5 - @select_y), Image.new(460, 3, C_WHITE))
+    Window.draw(Window.width / 2 - 200, Window.height - 50 - 100 * (5 - @select_y), Image.new(440, 3, C_WHITE))
     return unless Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE) || Input.pad_push?(5)
 
     @is_finish = true

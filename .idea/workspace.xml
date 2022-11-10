@@ -8,20 +8,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/images/option/arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/en_save_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/en_save_select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_save_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_save_select.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/arrow_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/en_alert_no.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/en_alert_yes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/en_delete_normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/en_delete_select.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/en_normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/en_select.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_alert_no.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_alert_yes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_delete_normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_delete_select.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/images/option/ja_select.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/help.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/guide.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/option/arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/option/arrow_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/option/en_save_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/option/en_save_select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/option/ja_save_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/option/ja_save_select.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/option.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/option.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/setting.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/setting.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/main.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +76,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "C:/Users/kijiharu/Desktop/for_ruby-con/lib/scene/guid.rb",
+    "last_opened_file_path": "C:/Users/kijiharu/Desktop/for_ruby-con/lib/images/option",
     "ruby.rails.projectView.checked": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -78,11 +85,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\images\option" />
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage6" />
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage5" />
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage4" />
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage3" />
-      <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\images\option" />
