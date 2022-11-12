@@ -8,31 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/scene/select_stage.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/player.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_1.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/Carrier.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/Carrier.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/fighter-zero-normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter-zero-normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/fighter-zero-shot.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter-zero-shot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/fighter_stuka_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_stuka_fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/fighter_stuka_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_stuka_normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/fighter_thunderbolt_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_thunderbolt_fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/fighter_thunderbolt_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_thunderbolt_normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/fighter_zero_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_zero_fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/fighter_zero_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_zero_normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/base.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/option.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/option.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result1.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result3.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result4.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result4.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result5.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result5.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result6.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result6.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage1.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -5,7 +5,6 @@ module Scene
     def initialize
       super
       @lang = $lang
-      @volume = 0 # 90 120 150 180 210 240 255
       @select = 0 # 0:lang 1:volume 2:apply 3:clear data
       @confirm_clear = false
       @confirm_select = false
@@ -25,10 +24,40 @@ module Scene
       @ja_alert_yes = Image.load("#{$PATH}/lib/images/option/ja_alert_yes.png")
       @en_alert_no = Image.load("#{$PATH}/lib/images/option/en_alert_no.png")
       @en_alert_yes = Image.load("#{$PATH}/lib/images/option/en_alert_yes.png")
+      @volume = case $volume
+                when 0
+                  0
+                when 90
+                  1
+                when 120
+                  2
+                when 180
+                  3
+                when 210
+                  4
+                when 255
+                  5
+                end
     end
 
     def update
       super
+      case @volume
+      when 0
+        $volume = 0
+      when 1
+        $volume = 90
+      when 2
+        $volume = 120
+      when 3
+        $volume = 180
+      when 4
+        $volume = 210
+      when 5
+        $volume = 255
+      end
+
+
       draw
 
       if @confirm_clear
@@ -97,11 +126,11 @@ module Scene
                   end
         end
       elsif @select == 1
-        if (Input.pad_push?(0) || Input.pad_down?(20) || Input.key_push?(K_LEFTARROW) || Input.key_push?(K_A)) && $volume > 0
-          $volume -= 1
+        if (Input.pad_push?(0) || Input.pad_push?(20) || Input.key_push?(K_LEFTARROW) || Input.key_push?(K_A)) && @volume > 0
+          @volume -= 1
           @touch_sound.play.set_volume($volume)
-        elsif (Input.pad_push?(1) || Input.pad_down?(21) || Input.key_push?(K_RIGHTARROW) || Input.key_push?(K_D)) && $volume < 255
-          $volume += 1
+        elsif (Input.pad_push?(1) || Input.pad_push?(21) || Input.key_push?(K_RIGHTARROW) || Input.key_push?(K_D)) && @volume < 5
+          @volume += 1
           @touch_sound.play.set_volume($volume)
         end
       elsif @select == 2
@@ -121,7 +150,7 @@ module Scene
 
       Window.draw_font(Window.width / 2 - 5, 300, ':', Font.new(48, @font))
       Window.draw_font(Window.width / 2 - 5, 400, ':', Font.new(48, @font))
-      Window.draw_font(Window.width / 2 + 260, 400, @volume, Font.new(48, @font))
+      Window.draw_font(Window.width / 2 + 260, 400, @volume.to_s, Font.new(48, @font))
 
       if $lang == 'en'
         Window.draw_font(500, 100, 'Option', Font.new(70, @font))
@@ -155,8 +184,8 @@ module Scene
         Window.draw(700, 312, @arrow_left)
         Window.draw(1200, 312, @arrow_right)
       when 1
-        Window.draw(700, 412, @arrow_left)
-        Window.draw(1200, 412, @arrow_right)
+        Window.draw(700, 412, @arrow_left) if @volume > 0
+        Window.draw(1200, 412, @arrow_right) if @volume < 5
       end
     end
 
@@ -166,7 +195,7 @@ module Scene
 
       File.open('user.json', 'r') do |file|
         @data = JSON.load(file)
-        @data["setting"]["lang"] = "#{$lang}"
+        @data["setting"]["lang"] = $lang
         @data["setting"]["volume"] = $volume
         file.close
       end
