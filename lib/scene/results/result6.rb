@@ -5,17 +5,7 @@ module Scene
         super
         @win_background = Image.load("#{$PATH}/lib/images/result/win-picture01.jpg")
         @lose_background = Image.load("#{$PATH}/lib/images/result/zero_destroyed.png")
-      end
-
-      def update
-        super
-      end
-
-      def win
-        super
-      end
-      def lose
-        super
+        @next_scene = Scene::NameInput.new
       end
     end
   end

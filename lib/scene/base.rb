@@ -3,7 +3,6 @@ module Scene
     attr_reader :is_finish, :next_scene
     def initialize
       @count = 0
-      @background = Image.load("#{$PATH}/lib/images/Sea.png")
       @is_finish = false
       @next_scene = nil
       @font = 'x8y12pxTheStrongGamer'

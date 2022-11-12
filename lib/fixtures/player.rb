@@ -5,8 +5,8 @@ module Fixture
             def initialize
                 self.x = Window.width / 2 - 5
                 self.y = Window.height - 100
-                @normal_image = Image.load("#{$PATH}/lib/images/fighter_zero_normal.png")
-                @shot_image = Image.load("#{$PATH}/lib/images/fighter-zero-shot.png")
+                @normal_image = Image.load("#{$PATH}/lib/images/stages/fighter_zero_normal.png")
+                @shot_image = Image.load("#{$PATH}/lib/images/stages/fighter-zero-shot.png")
                 @power = 5.0
                 @bullets = []
                 @shot_timer = 100

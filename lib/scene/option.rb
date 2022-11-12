@@ -4,9 +4,8 @@ module Scene
   class Option < Scene::Base
     def initialize
       super
-      @lang = 0 if $lang == 'en'
-      @lang = 1 if $lang == 'ja'
-      @volume = $volume
+      @lang = $lang
+      @volume = 0 # 90 120 150 180 210 240 255
       @select = 0 # 0:lang 1:volume 2:apply 3:clear data
       @confirm_clear = false
       @confirm_select = false
@@ -35,7 +34,7 @@ module Scene
       if @confirm_clear
         if Input.pad_push?(4)
           @confirm_clear = false
-          @click_sound.play
+          @click_sound.play.set_volume($volume)
         end
         if $lang == 'en'
           Window.draw(300, 200, @en_alert_no) unless @confirm_select
@@ -46,16 +45,23 @@ module Scene
         end
 
         if Input.pad_push?(0) || Input.pad_push?(20) || Input.key_push?(K_LEFTARROW) || Input.key_push?(K_A)
-          @touch_sound.play
+          @touch_sound.play.set_volume($volume)
           @confirm_select = true
         end
         if Input.pad_push?(1) || Input.pad_push?(21) || Input.key_push?(K_RIGHTARROW) || Input.key_push?(K_D)
-          @touch_sound.play
+          @touch_sound.play.set_volume($volume)
           @confirm_select = false
         end
 
+        if (Input.pad_push?(5) || Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)) && !@confirm_select
+          @click_sound.play.set_volume($volume)
+          @confirm_clear = false
+          @confirm_select = false
+          @select = 0
+        end
+
         if (Input.pad_push?(5) || Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)) && @confirm_select
-          @click_sound.play
+          @click_sound.play.set_volume($volume)
           @confirm_clear = false
           @confirm_select = false
           @select = 0
@@ -73,10 +79,10 @@ module Scene
       end
       if Input.pad_push?(22) || Input.key_push?(K_W) || Input.key_push?(K_UPARROW)
         @select -= 1 if @select.positive?
-        @touch_sound.play
+        @touch_sound.play.set_volume($volume)
       elsif Input.pad_push?(23) || Input.key_push?(K_S) || Input.key_push?(K_DOWNARROW)
-        @select += 1 if @select < 4
-        @touch_sound.play
+        @select += 1 if @select < 3
+        @touch_sound.play.set_volume($volume)
       end
       if @select.zero?
         [0, 1, 20, 21].each do |n|
@@ -84,45 +90,44 @@ module Scene
 
           @touch_sound.play
           @lang = case @lang
-                  when 1
-                    0
-                  when 0
-                    1
-                  else
-                    0
+                  when 'en'
+                    'ja'
+                  when 'ja'
+                    'en'
                   end
         end
       elsif @select == 1
-        if (Input.pad_push?(0) || Input.pad_push?(20) || Input.key_push?(K_LEFTARROW) || Input.key_push?(K_A)) && @volume.positive?
-          @volume -= 1
-          @touch_sound.play
-        elsif (Input.pad_push?(1) || Input.pad_push?(21) || Input.key_push?(K_RIGHTARROW) || Input.key_push?(K_D)) && @volume < 100
-          @volume += 1
-          @touch_sound.play
+        if (Input.pad_push?(0) || Input.pad_down?(20) || Input.key_push?(K_LEFTARROW) || Input.key_push?(K_A)) && $volume > 0
+          $volume -= 1
+          @touch_sound.play.set_volume($volume)
+        elsif (Input.pad_push?(1) || Input.pad_down?(21) || Input.key_push?(K_RIGHTARROW) || Input.key_push?(K_D)) && $volume < 255
+          $volume += 1
+          @touch_sound.play.set_volume($volume)
         end
       elsif @select == 2
         if Input.pad_push?(5) || Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)
           apply
-          @click_sound.play
+          @click_sound.play.set_volume($volume)
         end
       elsif @select == 3
         if Input.pad_push?(5) || Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)
           @confirm_clear = true
-          @click_sound.play
+          @click_sound.play.set_volume($volume)
         end
       end
     end
 
     def draw
+
       Window.draw_font(Window.width / 2 - 5, 300, ':', Font.new(48, @font))
       Window.draw_font(Window.width / 2 - 5, 400, ':', Font.new(48, @font))
-      Window.draw_font(Window.width / 2 + 260, 400, @volume.to_s, Font.new(48, @font))
+      Window.draw_font(Window.width / 2 + 260, 400, @volume, Font.new(48, @font))
 
       if $lang == 'en'
         Window.draw_font(500, 100, 'Option', Font.new(70, @font))
 
-        Window.draw_font(150, 300, 'Language(言語)       English(英語)', Font.new(48, @font)) if @lang.zero?
-        Window.draw_font(150, 300, 'Language(言語)      Japanese(日本語)', Font.new(48, @font)) if @lang == 1
+        Window.draw_font(150, 300, 'Language(言語)       English(英語)', Font.new(48, @font)) if @lang == 'en'
+        Window.draw_font(150, 300, 'Language(言語)      Japanese(日本語)', Font.new(48, @font)) if @lang == 'ja'
 
         Window.draw_font(150, 400, 'Volume', Font.new(48, @font))
 
@@ -134,8 +139,8 @@ module Scene
       else
         Window.draw_font(500, 100, 'オプション', Font.new(70, @font))
 
-        Window.draw_font(150, 300, 'ゲンゴ(Language)　     エイゴ(English) ', Font.new(48, @font)) if @lang.zero?
-        Window.draw_font(150, 300, 'ゲンゴ(Language) 　    ニホンゴ(Japanese)', Font.new(48, @font)) if @lang == 1
+        Window.draw_font(150, 300, 'ゲンゴ(Language)　     エイゴ(English) ', Font.new(48, @font)) if @lang == 'en'
+        Window.draw_font(150, 300, 'ゲンゴ(Language) 　    ニホンゴ(Japanese)', Font.new(48, @font)) if @lang == 'ja'
 
         Window.draw_font(150, 400, 'オンリョウ', Font.new(48, @font))
         Window.draw(Window.width / 2 - @ja_apply_normal.width / 2, 600, @ja_apply_normal) if @select != 2
@@ -156,10 +161,20 @@ module Scene
     end
 
     def apply
-      $lang = 'ja' if @lang == 1
-      $lang = 'en' if @lang.zero?
-      $volume = @volume
+      $lang = 'ja' if @lang == 'ja'
+      $lang = 'en' if @lang == 'en'
 
+      File.open('user.json', 'r') do |file|
+        @data = JSON.load(file)
+        @data["setting"]["lang"] = "#{$lang}"
+        @data["setting"]["volume"] = $volume
+        file.close
+      end
+      File.open('user.json', 'w') do |file|
+        @data = JSON.pretty_generate(@data)
+        file.puts(@data)
+        file.close
+      end
       @is_finish = true
       @next_scene = Scene::Opening.new
     end

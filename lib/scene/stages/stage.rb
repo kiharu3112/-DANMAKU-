@@ -8,6 +8,7 @@ module Scene
         @scene = :start
         @player = Fixture::Player.new
         @enemy_bullet = []
+        @background = Image.load("#{$PATH}/lib/images/Sea.png")
       end
 
       def update
@@ -119,6 +120,5 @@ module Scene
         Window.draw(0, 0, @background)
       end
     end
-
   end
 end

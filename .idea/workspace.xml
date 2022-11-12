@@ -8,10 +8,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/scene/select_stage.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/player.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_1.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_2.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/Carrier.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/Carrier.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/fighter-zero-normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter-zero-normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/fighter-zero-shot.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter-zero-shot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/fighter_stuka_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_stuka_fire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/fighter_stuka_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_stuka_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/fighter_thunderbolt_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_thunderbolt_fire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/fighter_thunderbolt_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_thunderbolt_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/fighter_zero_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_zero_fire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/images/fighter_zero_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_zero_normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/base.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/option.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/option.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result1.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result2.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result3.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result4.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result4.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result5.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result5.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result6.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result6.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage1.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,11 +96,11 @@
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\fixtures\stage3" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\images\stages" />
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\images\option" />
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\images" />
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\sounds" />
       <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\scene\stages" />
-      <recent name="C:\Users\kijiharu\Desktop\for_ruby-con\lib\images\result" />
     </key>
   </component>
   <component name="RubyModuleManagerSettings">
@@ -94,7 +115,7 @@
       <command value="ruby main.rb" />
     </option>
   </component>
-  <component name="RunManager" selected="Ruby.opening">
+  <component name="RunManager" selected="Ruby.stage1">
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -239,6 +260,20 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
+    <configuration name="stage1" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="for_ruby-con" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/lib/scene/stages/stage1.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -263,6 +298,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Ruby.stage1" />
         <item itemvalue="Ruby.opening" />
         <item itemvalue="Ruby.ruby main.rb" />
         <item itemvalue="Ruby.result" />
@@ -286,5 +322,6 @@
     <SUITE FILE_PATH="coverage/for_ruby_con@ruby_main_rb.rcov" NAME="ruby main.rb のカバレッジ結果" MODIFIED="1667835500273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
     <SUITE FILE_PATH="coverage/for_ruby_con@player_gun.rcov" NAME="player_gun のカバレッジ結果" MODIFIED="1668108672846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
     <SUITE FILE_PATH="coverage/for_ruby_con@opening.rcov" NAME="opening のカバレッジ結果" MODIFIED="1668010734762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
+    <SUITE FILE_PATH="coverage/for_ruby_con@stage1.rcov" NAME="stage1 のカバレッジ結果" MODIFIED="1668171147415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="for_ruby-con" />
   </component>
 </project>

@@ -6,17 +6,7 @@ module Scene
         @next_scene = Scene::Stages::Stage4.new
         @win_background = Image.load("#{$PATH}/lib/images/result/win-picture01.jpg")
         @lose_background = Image.load("#{$PATH}/lib/images/result/zero_destroyed.png")
-      end
-
-      def update
-        super
-      end
-
-      def win
-        super
-      end
-      def lose
-        super
+        @next_scene = Scene::Stages::Stage4.new if $health > 0
       end
     end
   end

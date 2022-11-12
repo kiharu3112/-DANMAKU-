@@ -39,17 +39,17 @@ module Scene
         Window.draw(Window.width / 2 - 240, Window.height / 3 * 2 + 35, Image.new(510, 3, @gold)) if @select == 0
 
         @retire_button.draw
-        @retire_touch = true if @select == 1
+        @next_scene = Scene::NameInput.new if @select == 1
         Window.draw_font(Window.width / 2 - 100, Window.height / 3 * 2 + 100, "Retire", Font.new(48, @font), option={color:@gold})
         Window.draw(Window.width / 2 - 100, Window.height / 3 * 2 + 150, Image.new(190, 3, @gold)) if @select == 1
 
-        @is_finish = Input.pad_push?(5)
+        @is_finish = Input.pad_push?(5) || Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)
       end
 
       def lose
         Window.draw(0, 0, @lose_background)
         Window.draw_font(Window.width / 2 - 220, Window.height / 2  - 280, "You down", Font.new(100, @font), option={color:@gold})
-        @is_finish = Input.pad_push?(5)
+        @is_finish = Input.pad_push?(5) || Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)
         @next_scene = Scene::NameInput.new
       end
 
