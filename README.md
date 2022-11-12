@@ -1,4 +1,4 @@
-# for_ruby-con
+# ruby-con-game
 ## !DANMAKU!
 
 ## 操作方法
