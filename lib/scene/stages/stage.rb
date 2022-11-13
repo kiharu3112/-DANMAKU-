@@ -3,18 +3,17 @@ module Scene
     class Stage < Scene::Base
       include Fixture::Stage
       def initialize
+        super
         @enemies = []
         @items = []
         @scene = :start
         @player = Fixture::Player.new
         @enemy_bullet = []
-        @background = Image.load("#{$path}/lib/images/Sea.png")
-        @count = 0
+        @background = Image.load("#{$path}/lib/images/stages/Sea.png")
       end
 
       def update
-        Window.close if Input.key_down?(K_ESCAPE)
-        @count += 1
+        super
         start if @scene == :start
         game if @scene == :game
         end_scene if @scene == :end
@@ -35,11 +34,8 @@ module Scene
         @player.update
         Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @Font))
         Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @Font))
-        if (@enemies.count <= 0  && @count > 500) || $health <= 0
-          @scene = :end
-          @player.image = @player.normal_image
-        end
-        #########################################################################
+
+        #############################l############################################
         @enemies.each { |n| n.update }
         @enemies.delete_if { |n| n.health <= 0 }
 
@@ -54,10 +50,9 @@ module Scene
         @items.each do |n|
           n.update
           if n === @player
-            n.hit = true
-            case n.name
-            when "repairebox"
-              @player.repaire
+            if n.name == "repair"
+              @player.repair
+              n.hit = true
             end
           end
         end
@@ -95,7 +90,6 @@ module Scene
             if i === n
               i.damage
               if i.health <= 0
-                @enemy_num -= 1
                 $score += 10
                 break
               end

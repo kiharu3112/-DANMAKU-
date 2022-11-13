@@ -35,19 +35,16 @@ module Scene
 
         @next_button.draw
         @retire_button.draw
+        Window.draw_font(Window.width / 2 - 100, Window.height / 3 * 2 + 100, "Retire", Font.new(48, @Font), option={ color:@gold})
+        Window.draw_font(Window.width / 2 - 240, Window.height / 3 * 2 - 30, ">>Next Stage", Font.new(64, @Font), option={ color:@gold})
 
         if @select == 0
 
-          Window.draw_font(Window.width / 2 - 240, Window.height / 3 * 2 - 30, ">>Next Stage", Font.new(64, @Font), option={ color:@gold}) if @stage_num != 6
-          Window.draw_font(Window.width / 2 - 240, Window.height / 3 * 2 - 30, ">>Last Stage", Font.new(64, @Font), option={ color:@gold}) if @stage_num == 6
           Window.draw(Window.width / 2 - 240, Window.height / 3 * 2 + 35, Image.new(510, 3, @gold))
         else
           @next_scene = Scene::NameInput.new if @select == 1
-          Window.draw_font(Window.width / 2 - 100, Window.height / 3 * 2 + 100, "Retire", Font.new(48, @Font), option={ color:@gold})
-          Window.draw(Window.width / 2 - 100, Window.height / 3 * 2 + 150, Image.new(190, 3, @gold)) if @select == 1
+          Window.draw(Window.width / 2 - 100, Window.height / 3 * 2 + 150, Image.new(190, 3, @gold))
         end
-
-
         @is_finish = Input.pad_push?(5) || Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)
       end
 

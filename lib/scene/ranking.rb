@@ -3,7 +3,6 @@ module Scene
     include Fixture
     def initialize
       super
-      @click_sound = Sound.new("#{$path}/lib/sounds/title_button_click.wav")
       @Font = 'x8y12pxTheStrongGamer'
       @keys = [
         K_A,
@@ -36,7 +35,6 @@ module Scene
         K_SPACE
       ]
       @next_scene = Scene::Opening.new
-
     end
 
     def update
@@ -53,7 +51,6 @@ module Scene
       input_key = input
       if input_key
         @is_finish = true
-        @click_sound.play.set_volume($volume)
       end
     end
 

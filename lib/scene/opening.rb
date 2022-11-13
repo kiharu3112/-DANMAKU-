@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Scene::Opening < Scene::Base
   def initialize
     super
@@ -10,6 +8,7 @@ class Scene::Opening < Scene::Base
 
   def update
     super
+    printf("\r #{@next_scene}")
     if Input.key_push?(K_S) || Input.key_push?(K_DOWNARROW) || Input.pad_push?(23)
       @select_y += 1
       @touch_sound.play.set_volume($volume)

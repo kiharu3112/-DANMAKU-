@@ -29,13 +29,9 @@ module Scene
         @click_sound.play.set_volume($volume)
         @is_finish = true
         @next_scene = Scene::Stages::Stage1.new if @select == 0
-        @next_scene = Scene::Stages::Endless.new if @select == 1
+        @next_scene = Scene::Stages::Stage_endless.new if @select == 1
       end
-      if Input.pad_push?(4)
-        @click_sound.play.set_volume($volume)
-        @is_finish = true
-        @next_scene = Scene::Opening.new
-      end
+
       if $lang == "en"
         if @select.zero?
           Window.draw(150, 200, @en_story_select)
@@ -52,6 +48,12 @@ module Scene
           Window.draw(150, 200, @ja_story_normal)
           Window.draw(Window.width - 550, 200, @ja_endless_select)
         end
+      end
+
+      if Input.pad_push?(4)
+        @click_sound.play.set_volume($volume)
+        @is_finish = true
+        @next_scene = Scene::Opening.new
       end
     end
   end

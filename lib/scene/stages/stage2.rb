@@ -6,17 +6,12 @@ module Scene
         @next_scene = Scene::Results::Result2.new
         @enemy_num = 12
       end
-
-      def update
-        super
-      end
-
-      def start
-        super
-      end
-
       def game
         super
+        if (@enemies.count <= 0  && @count > 500) || $health <= 0
+          @scene = :end
+          @player.image = @player.normal_image
+        end
         case @count
         when 0
           @enemies << Enemy_1.new(Window.width / 4, -200)
@@ -37,19 +32,6 @@ module Scene
           @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
         end
       end
-
-      def end_scene
-        super
-      end
-
-      def finish?
-        super
-      end
-
-      def next_scene
-        super
-      end
     end
-
   end
 end

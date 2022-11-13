@@ -3,18 +3,15 @@ module Scene
     class Stage6 < Scene::Stages::Stage
       def initialize
         super
-        @next_scene = Scene::Results::Result6.new
+        @next_scene = Scene::Results::Result_Endless.new
         @enemy_num = 9
       end
-      def update
-        super
-      end
-      def start
-        super
-      end
-
       def game
         super
+        if (@enemies.count <= 0  && @count > 500) || $health <= 0
+          @scene = :end
+          @player.image = @player.normal_image
+        end
         case @count
         when 0
           @enemies << Enemy_1.new(Window.width / 4, -200)
@@ -46,11 +43,6 @@ module Scene
           @count = 0
         end
       end
-      def end_scene
-        super
-      end
     end
-
   end
 end
-
