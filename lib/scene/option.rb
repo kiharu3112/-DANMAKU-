@@ -8,22 +8,22 @@ module Scene
       @select = 0 # 0:lang 1:volume 2:apply 3:clear data
       @confirm_clear = false
       @confirm_select = false
-      @en_apply_normal = Image.load("#{$PATH}/lib/images/option/en_normal.png")
-      @en_apply_select = Image.load("#{$PATH}/lib/images/option/en_select.png")
-      @ja_apply_normal = Image.load("#{$PATH}/lib/images/option/ja_normal.png")
-      @ja_apply_select = Image.load("#{$PATH}/lib/images/option/ja_select.png")
-      @en_delete_normal = Image.load("#{$PATH}/lib/images/option/en_delete_normal.png")
-      @en_delete_select = Image.load("#{$PATH}/lib/images/option/en_delete_select.png")
-      @ja_delete_normal = Image.load("#{$PATH}/lib/images/option/ja_delete_normal.png")
-      @ja_delete_select = Image.load("#{$PATH}/lib/images/option/ja_delete_select.png")
-      @arrow_right = Image.load("#{$PATH}/lib/images/option/arrow_right.png")
-      @arrow_left = Image.load("#{$PATH}/lib/images/option/arrow_left.png")
-      @ja_alert_no = Image.load("#{$PATH}/lib/images/option/ja_alert_no.png")
-      @ja_alert_yes = Image.load("#{$PATH}/lib/images/option/ja_alert_yes.png")
-      @en_alert_no = Image.load("#{$PATH}/lib/images/option/en_alert_no.png")
-      @en_alert_yes = Image.load("#{$PATH}/lib/images/option/en_alert_yes.png")
-      @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
-      @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
+      @en_apply_normal = Image.load("#{$path}/lib/images/option/en_normal.png")
+      @en_apply_select = Image.load("#{$path}/lib/images/option/en_select.png")
+      @ja_apply_normal = Image.load("#{$path}/lib/images/option/ja_normal.png")
+      @ja_apply_select = Image.load("#{$path}/lib/images/option/ja_select.png")
+      @en_delete_normal = Image.load("#{$path}/lib/images/option/en_delete_normal.png")
+      @en_delete_select = Image.load("#{$path}/lib/images/option/en_delete_select.png")
+      @ja_delete_normal = Image.load("#{$path}/lib/images/option/ja_delete_normal.png")
+      @ja_delete_select = Image.load("#{$path}/lib/images/option/ja_delete_select.png")
+      @arrow_right = Image.load("#{$path}/lib/images/option/arrow_right.png")
+      @arrow_left = Image.load("#{$path}/lib/images/option/arrow_left.png")
+      @ja_alert_no = Image.load("#{$path}/lib/images/option/ja_alert_no.png")
+      @ja_alert_yes = Image.load("#{$path}/lib/images/option/ja_alert_yes.png")
+      @en_alert_no = Image.load("#{$path}/lib/images/option/en_alert_no.png")
+      @en_alert_yes = Image.load("#{$path}/lib/images/option/en_alert_yes.png")
+      @touch_sound = Sound.new("#{$path}/lib/sounds/title_button_touch.wav")
+      @click_sound = Sound.new("#{$path}/lib/sounds/title_button_click.wav")
       @volume = case $volume
                 when 0
                   0
@@ -148,17 +148,17 @@ module Scene
 
     def draw
 
-      Window.draw_font(Window.width / 2 - 5, 300, ':', Font.new(48, @font))
-      Window.draw_font(Window.width / 2 - 5, 400, ':', Font.new(48, @font))
-      Window.draw_font(Window.width / 2 + 260, 400, @volume.to_s, Font.new(48, @font))
+      Window.draw_font(Window.width / 2 - 5, 300, ':', Font.new(48, @Font))
+      Window.draw_font(Window.width / 2 - 5, 400, ':', Font.new(48, @Font))
+      Window.draw_font(Window.width / 2 + 260, 400, @volume.to_s, Font.new(48, @Font))
 
       if $lang == 'en'
-        Window.draw_font(500, 100, 'Option', Font.new(70, @font))
+        Window.draw_font(500, 100, 'Option', Font.new(70, @Font))
 
-        Window.draw_font(150, 300, 'Language(言語)       English(英語)', Font.new(48, @font)) if @lang == 'en'
-        Window.draw_font(150, 300, 'Language(言語)      Japanese(日本語)', Font.new(48, @font)) if @lang == 'ja'
+        Window.draw_font(150, 300, 'Language(言語)       English(英語)', Font.new(48, @Font)) if @lang == 'en'
+        Window.draw_font(150, 300, 'Language(言語)      Japanese(日本語)', Font.new(48, @Font)) if @lang == 'ja'
 
-        Window.draw_font(150, 400, 'Volume', Font.new(48, @font))
+        Window.draw_font(150, 400, 'Volume', Font.new(48, @Font))
 
         Window.draw(Window.width / 2 - @en_apply_normal.width / 2, 600, @en_apply_normal) if @select != 2
         Window.draw(Window.width / 2 - @en_apply_select.width / 2, 600, @en_apply_select) if @select == 2
@@ -166,12 +166,12 @@ module Scene
         Window.draw(Window.width / 2 - @en_delete_normal.width / 2, 800, @en_delete_normal) if @select != 3
         Window.draw(Window.width / 2 - @en_delete_select.width / 2, 800, @en_delete_select) if @select == 3
       else
-        Window.draw_font(500, 100, 'オプション', Font.new(70, @font))
+        Window.draw_font(500, 100, 'オプション', Font.new(70, @Font))
 
-        Window.draw_font(150, 300, 'ゲンゴ(Language)　     エイゴ(English) ', Font.new(48, @font)) if @lang == 'en'
-        Window.draw_font(150, 300, 'ゲンゴ(Language) 　    ニホンゴ(Japanese)', Font.new(48, @font)) if @lang == 'ja'
+        Window.draw_font(150, 300, 'ゲンゴ(Language)　     エイゴ(English) ', Font.new(48, @Font)) if @lang == 'en'
+        Window.draw_font(150, 300, 'ゲンゴ(Language) 　    ニホンゴ(Japanese)', Font.new(48, @Font)) if @lang == 'ja'
 
-        Window.draw_font(150, 400, 'オンリョウ', Font.new(48, @font))
+        Window.draw_font(150, 400, 'オンリョウ', Font.new(48, @Font))
         Window.draw(Window.width / 2 - @ja_apply_normal.width / 2, 600, @ja_apply_normal) if @select != 2
         Window.draw(Window.width / 2 - @ja_apply_select.width / 2, 600, @ja_apply_select) if @select == 2
 

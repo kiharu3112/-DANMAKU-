@@ -5,7 +5,7 @@ module Scene
     class Stage1 < Scene::Stages::Stage
       def initialize
         super
-        @carrier = Image.load("#{$PATH}/lib/images/stages/Carrier.png")
+        @carrier = Image.load("#{$path}/lib/images/stages/Carrier.png")
         @enemy_num = 9
         @next_scene = Scene::Results::Result1.new
       end
@@ -43,6 +43,7 @@ module Scene
           @enemies << Enemy_1.new(Window.width / 4, -200)
           @enemies << Enemy_1.new(Window.width / 2, -150)
           @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+
         when 900
           @enemies << Enemy_1.new(Window.width / 4, -200)
           @enemies << Enemy_1.new(Window.width / 2, -150)

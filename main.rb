@@ -13,8 +13,8 @@ Dir[
 ].each do |file|
   require_relative file
 end
-$PATH = __dir__
+$path = __dir__
 $lnag = "ja"
 $score = 0
-Font.install("#{$PATH}/lib/fixtures/font/x8y12pxTheStrongGamer.ttf")
+Font.install("#{$path}/lib/fixtures/font/x8y12pxTheStrongGamer.ttf")
 SceneManager.new.start

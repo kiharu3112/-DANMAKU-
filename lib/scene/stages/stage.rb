@@ -1,15 +1,14 @@
 module Scene
   module Stages
     class Stage < Scene::Base
-      attr_reader :is_finish, :next_scene
       include Fixture::Stage
       def initialize
-        @font = 'x8y12pxTheStrongGamer'
         @enemies = []
+        @items = []
         @scene = :start
         @player = Fixture::Player.new
         @enemy_bullet = []
-        @background = Image.load("#{$PATH}/lib/images/Sea.png")
+        @background = Image.load("#{$path}/lib/images/Sea.png")
         @count = 0
       end
 
@@ -34,8 +33,8 @@ module Scene
       def game
         background_move_draw_2
         @player.update
-        Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @font))
-        Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @font))
+        Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @Font))
+        Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @Font))
         if (@enemies.count <= 0  && @count > 500) || $health <= 0
           @scene = :end
           @player.image = @player.normal_image
@@ -51,6 +50,19 @@ module Scene
             n.hit = true
           end
         end
+
+        @items.each do |n|
+          n.update
+          if n === @player
+            n.hit = true
+            case n.name
+            when "repairebox"
+              @player.repaire
+            end
+          end
+        end
+
+        @items.delete_if { |n|n.hit }
 
         @enemies.each do|n|
           if n.name == "Enemy_1"

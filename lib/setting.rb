@@ -1,4 +1,3 @@
-
 module Setting
   Window.width = 1280
   Window.height = 960

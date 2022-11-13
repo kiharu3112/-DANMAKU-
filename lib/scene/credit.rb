@@ -6,7 +6,7 @@ module Scene
       h2 = 50
       p = 45
       sentence = Struct.new(:str, :size)
-      @qrcode = Image.load("#{$PATH}/lib/images/QR.png")
+      @qrcode = Image.load("#{$path}/lib/images/QR.png")
       @message = [
         sentence.new("Pictures", h1),
         sentence.new("空母の画像", h2),
@@ -70,7 +70,7 @@ module Scene
         space += @message[i].size * 2
         Window.draw_font(80, Window.height + space - @count * 1.5,
                          "#{@message[i].str}",
-                         Font.new(@message[i].size, @font))
+                         Font.new(@message[i].size, @Font))
       end
       Window.draw(Window.width / 2 - @qrcode.width / 2, Window.height + space - @count * 1.5 + 100, @qrcode)
       @is_finish = true if @count > 3100

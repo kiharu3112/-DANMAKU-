@@ -5,12 +5,12 @@ module Fixture
         def initialize
             self.x = Window.width / 2 - 10
             self.y = Window.height - 100
-            @normal_image = Image.load("#{$PATH}/lib/images/stages/fighter_zero_normal.png")
-            @shot_image = Image.load("#{$PATH}/lib/images/stages/fighter-zero-shot.png")
+            @normal_image = Image.load("#{$path}/lib/images/stages/fighter_zero_normal.png")
+            @shot_image = Image.load("#{$path}/lib/images/stages/fighter-zero-shot.png")
             @power = 5.0
             @bullets = []
             @shot_timer = 100
-            @shot_sound = Sound.new("#{$PATH}/lib/sounds/shot1.wav")
+            @shot_sound = Sound.new("#{$path}/lib/sounds/shot1.wav")
             $health = 50
         end
 
@@ -64,6 +64,10 @@ module Fixture
 
         def damage
             $health -= 10
+        end
+
+        def repaire
+            $health += 20
         end
     end
 end

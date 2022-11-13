@@ -7,8 +7,8 @@ module Fixture
         self.x = x
         self.y = y
         @health = 15
-        @normal = Image.load("#{$PATH}/lib/images/stages/fighter_stuka_normal.png")
-        @shot = Image.load("#{$PATH}/lib/images/stages/fighter_stuka_fire.png")
+        @normal = Image.load("#{$path}/lib/images/stages/fighter_stuka_normal.png")
+        @shot = Image.load("#{$path}/lib/images/stages/fighter_stuka_fire.png")
         self.image = @normal
         @count = 0
         @shot_num = 1

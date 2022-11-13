@@ -2,16 +2,16 @@ module Scene
   class Select_Stage < Scene::Base
     def initialize
       super
-      @en_endless_normal = Image.load("#{$PATH}/lib/images/select/en_endless_normal.png")
-      @en_endless_select = Image.load("#{$PATH}/lib/images/select/en_endless_select.png")
-      @en_story_normal = Image.load("#{$PATH}/lib/images/select/en_story_normal.png")
-      @en_story_select = Image.load("#{$PATH}/lib/images/select/en_story_select.png")
-      @ja_endless_normal = Image.load("#{$PATH}/lib/images/select/ja_endless_normal.png")
-      @ja_endless_select = Image.load("#{$PATH}/lib/images/select/ja_endless_select.png")
-      @ja_story_normal = Image.load("#{$PATH}/lib/images/select/ja_story_normal.png")
-      @ja_story_select = Image.load("#{$PATH}/lib/images/select/ja_story_select.png")
-      @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
-      @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
+      @en_endless_normal = Image.load("#{$path}/lib/images/select/en_endless_normal.png")
+      @en_endless_select = Image.load("#{$path}/lib/images/select/en_endless_select.png")
+      @en_story_normal = Image.load("#{$path}/lib/images/select/en_story_normal.png")
+      @en_story_select = Image.load("#{$path}/lib/images/select/en_story_select.png")
+      @ja_endless_normal = Image.load("#{$path}/lib/images/select/ja_endless_normal.png")
+      @ja_endless_select = Image.load("#{$path}/lib/images/select/ja_endless_select.png")
+      @ja_story_normal = Image.load("#{$path}/lib/images/select/ja_story_normal.png")
+      @ja_story_select = Image.load("#{$path}/lib/images/select/ja_story_select.png")
+      @touch_sound = Sound.new("#{$path}/lib/sounds/title_button_touch.wav")
+      @click_sound = Sound.new("#{$path}/lib/sounds/title_button_click.wav")
       @select = 0
     end
 
