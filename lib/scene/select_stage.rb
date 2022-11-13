@@ -10,17 +10,31 @@ module Scene
       @ja_endless_select = Image.load("#{$PATH}/lib/images/select/ja_endless_select.png")
       @ja_story_normal = Image.load("#{$PATH}/lib/images/select/ja_story_normal.png")
       @ja_story_select = Image.load("#{$PATH}/lib/images/select/ja_story_select.png")
+      @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
+      @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
       @select = 0
     end
 
     def update
       super
-      @select = 0 if Input.pad_push?(0) || Input.pad_push?(20) || Input.key_push?(K_LEFTARROW) || Input.key_push?(K_A)
-      @select = 1 if Input.pad_push?(1) || Input.pad_push?(21) || Input.key_push?(K_RIGHTARROW) || Input.key_push?(K_D)
+      if Input.pad_push?(0) || Input.pad_push?(20) || Input.key_push?(K_LEFTARROW) || Input.key_push?(K_A)
+        @touch_sound.play.set_volume($volume)
+        @select = 0
+      end
+      if Input.pad_push?(1) || Input.pad_push?(21) || Input.key_push?(K_RIGHTARROW) || Input.key_push?(K_D)
+        @select = 1
+        @touch_sound.play.set_volume($volume)
+      end
       if Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE) || Input.pad_push?(5)
+        @click_sound.play.set_volume($volume)
         @is_finish = true
         @next_scene = Scene::Stages::Stage1.new if @select == 0
         @next_scene = Scene::Stages::Endless.new if @select == 1
+      end
+      if Input.pad_push?(4)
+        @click_sound.play.set_volume($volume)
+        @is_finish = true
+        @next_scene = Scene::Opening.new
       end
       if $lang == "en"
         if @select.zero?

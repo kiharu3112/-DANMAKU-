@@ -13,7 +13,7 @@ Dir[
 ].each do |file|
   require_relative file
 end
-$PATH = File.dirname(__FILE__)
+$PATH = __dir__
 $lnag = "ja"
 $score = 0
 Font.install("#{$PATH}/lib/fixtures/font/x8y12pxTheStrongGamer.ttf")

@@ -1,18 +1,21 @@
 module Scene
   module Stages
     class Stage < Scene::Base
+      attr_reader :is_finish, :next_scene
       include Fixture::Stage
       def initialize
-        super
+        @font = 'x8y12pxTheStrongGamer'
         @enemies = []
         @scene = :start
         @player = Fixture::Player.new
         @enemy_bullet = []
         @background = Image.load("#{$PATH}/lib/images/Sea.png")
+        @count = 0
       end
 
       def update
-        super
+        Window.close if Input.key_down?(K_ESCAPE)
+        @count += 1
         start if @scene == :start
         game if @scene == :game
         end_scene if @scene == :end

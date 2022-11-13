@@ -3,9 +3,9 @@
 class Scene::Opening < Scene::Base
   def initialize
     super
+    @select_y = 0
     @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
     @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
-    @select_y = 0
   end
 
   def update

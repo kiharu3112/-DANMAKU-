@@ -16,14 +16,14 @@ module Scene
       @en_delete_select = Image.load("#{$PATH}/lib/images/option/en_delete_select.png")
       @ja_delete_normal = Image.load("#{$PATH}/lib/images/option/ja_delete_normal.png")
       @ja_delete_select = Image.load("#{$PATH}/lib/images/option/ja_delete_select.png")
-      @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
-      @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
       @arrow_right = Image.load("#{$PATH}/lib/images/option/arrow_right.png")
       @arrow_left = Image.load("#{$PATH}/lib/images/option/arrow_left.png")
       @ja_alert_no = Image.load("#{$PATH}/lib/images/option/ja_alert_no.png")
       @ja_alert_yes = Image.load("#{$PATH}/lib/images/option/ja_alert_yes.png")
       @en_alert_no = Image.load("#{$PATH}/lib/images/option/en_alert_no.png")
       @en_alert_yes = Image.load("#{$PATH}/lib/images/option/en_alert_yes.png")
+      @touch_sound = Sound.new("#{$PATH}/lib/sounds/title_button_touch.wav")
+      @click_sound = Sound.new("#{$PATH}/lib/sounds/title_button_click.wav")
       @volume = case $volume
                 when 0
                   0
