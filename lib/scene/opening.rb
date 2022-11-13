@@ -44,7 +44,7 @@ class Scene::Opening < Scene::Base
     @click_sound.play
     case @select_y
     when 0
-      @next_scene = Scene::Stages::Stage1.new
+      @next_scene = Scene::Select_Stage.new
       $health = 100
       $score = 0
     when 1
