@@ -19,7 +19,7 @@ module Scene
         Window.draw_font(Window.width / 2 - 500, Window.height / 5, "Please Input Your Name", Font.new(64, @Font))
         Window.draw_font(Window.width / 2 - 230, Window.height / 3, "SCORE IS : #{$score}", Font.new(64, @Font))
       else
-        Window.draw_font(Window.width / 2 - 500, Window.height / 5, "ナマエヲニュウリョクシテクダサイ", Font.new(64, @Font))
+        Window.draw_font(Window.width / 2 - 500, Window.height / 5, "ナマエヲニュウリョクシテクダサイ", Font.new(66, @Font))
         Window.draw_font(Window.width / 2 - 230, Window.height / 3, "アナタノスコアハ : #{$score}テン", Font.new(64, @Font))
       end
       Window.draw(Window.width / 3 - 100, Window.height / 2, @vertical_line)

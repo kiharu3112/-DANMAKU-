@@ -16,14 +16,14 @@ module Scene
       @en_delete_select = Image.load("#{$path}/lib/images/option/en_delete_select.png")
       @ja_delete_normal = Image.load("#{$path}/lib/images/option/ja_delete_normal.png")
       @ja_delete_select = Image.load("#{$path}/lib/images/option/ja_delete_select.png")
+      @touch_sound = Sound.new("#{$path}/lib/sounds/title_button_touch.wav")
+      @click_sound = Sound.new("#{$path}/lib/sounds/title_button_click.wav")
       @arrow_right = Image.load("#{$path}/lib/images/option/arrow_right.png")
       @arrow_left = Image.load("#{$path}/lib/images/option/arrow_left.png")
       @ja_alert_no = Image.load("#{$path}/lib/images/option/ja_alert_no.png")
       @ja_alert_yes = Image.load("#{$path}/lib/images/option/ja_alert_yes.png")
       @en_alert_no = Image.load("#{$path}/lib/images/option/en_alert_no.png")
       @en_alert_yes = Image.load("#{$path}/lib/images/option/en_alert_yes.png")
-      @touch_sound = Sound.new("#{$path}/lib/sounds/title_button_touch.wav")
-      @click_sound = Sound.new("#{$path}/lib/sounds/title_button_click.wav")
       @volume = case $volume
                 when 0
                   0
@@ -66,11 +66,11 @@ module Scene
           @click_sound.play.set_volume($volume)
         end
         if $lang == 'en'
-          Window.draw(300, 200, @en_alert_no) unless @confirm_select
-          Window.draw(300, 200, @en_alert_yes) if @confirm_select
+          Window.draw(Window.width / 2 - @en_alert_no.width / 2, 200, @en_alert_no) unless @confirm_select
+          Window.draw(Window.width / 2 - @en_alert_yes.width / 2, 200, @en_alert_yes) if @confirm_select
         else
-          Window.draw(300, 200, @ja_alert_yes) if @confirm_select
-          Window.draw(300, 200, @ja_alert_no) unless @confirm_select
+          Window.draw(Window.width / 2 - @ja_alert_yes.width / 2, 200, @ja_alert_yes) if @confirm_select
+          Window.draw(Window.width / 2 - @ja_alert_no.width / 2, 200, @ja_alert_no) unless @confirm_select
         end
 
         if Input.pad_push?(0) || Input.pad_push?(20) || Input.key_push?(K_LEFTARROW) || Input.key_push?(K_A)
@@ -114,9 +114,7 @@ module Scene
         @touch_sound.play.set_volume($volume)
       end
       if @select.zero?
-        [0, 1, 20, 21].each do |n|
-          next unless Input.pad_push?(n)
-
+        if Input.key_push?(K_A) || Input.key_push?(K_D) || Input.pad_push?(0) || Input.pad_push?(1) || Input.pad_push?(20) || Input.pad_push?(21)
           @touch_sound.play
           @lang = case @lang
                   when 'en'
@@ -153,39 +151,39 @@ module Scene
       Window.draw_font(Window.width / 2 + 260, 400, @volume.to_s, Font.new(48, @Font))
 
       if $lang == 'en'
-        Window.draw_font(500, 100, 'Option', Font.new(70, @Font))
+        Window.draw_font(400, 100, 'Option', Font.new(70, @Font))
 
-        Window.draw_font(150, 300, 'Language(言語)       English(英語)', Font.new(48, @Font)) if @lang == 'en'
-        Window.draw_font(150, 300, 'Language(言語)      Japanese(日本語)', Font.new(48, @Font)) if @lang == 'ja'
+        Window.draw_font(15, 300, 'Language(言語)      English(英語)', Font.new(45, @Font)) if @lang == 'en'
+        Window.draw_font(15, 300, 'Language(言語)      Japanese(日本語)', Font.new(45, @Font)) if @lang == 'ja'
 
-        Window.draw_font(150, 400, 'Volume', Font.new(48, @Font))
+        Window.draw_font(15, 400, 'Volume', Font.new(48, @Font))
 
-        Window.draw(Window.width / 2 - @en_apply_normal.width / 2, 600, @en_apply_normal) if @select != 2
-        Window.draw(Window.width / 2 - @en_apply_select.width / 2, 600, @en_apply_select) if @select == 2
+        Window.draw(Window.width / 2 - @en_apply_normal.width / 2, 500, @en_apply_normal) if @select != 2
+        Window.draw(Window.width / 2 - @en_apply_select.width / 2, 500, @en_apply_select) if @select == 2
 
-        Window.draw(Window.width / 2 - @en_delete_normal.width / 2, 800, @en_delete_normal) if @select != 3
-        Window.draw(Window.width / 2 - @en_delete_select.width / 2, 800, @en_delete_select) if @select == 3
+        Window.draw(Window.width / 2 - @en_delete_normal.width / 2, 650, @en_delete_normal) if @select != 3
+        Window.draw(Window.width / 2 - @en_delete_select.width / 2, 650, @en_delete_select) if @select == 3
       else
-        Window.draw_font(500, 100, 'オプション', Font.new(70, @Font))
+        Window.draw_font(400, 100, 'オプション', Font.new(70, @Font))
 
-        Window.draw_font(150, 300, 'ゲンゴ(Language)　     エイゴ(English) ', Font.new(48, @Font)) if @lang == 'en'
-        Window.draw_font(150, 300, 'ゲンゴ(Language) 　    ニホンゴ(Japanese)', Font.new(48, @Font)) if @lang == 'ja'
+        Window.draw_font(15, 300, 'ゲンゴ(Language)　     エイゴ(English) ', Font.new(45, @Font)) if @lang == 'en'
+        Window.draw_font(15, 300, 'ゲンゴ(Language) 　    ニホンゴ(Japanese)', Font.new(45, @Font)) if @lang == 'ja'
 
-        Window.draw_font(150, 400, 'オンリョウ', Font.new(48, @Font))
-        Window.draw(Window.width / 2 - @ja_apply_normal.width / 2, 600, @ja_apply_normal) if @select != 2
-        Window.draw(Window.width / 2 - @ja_apply_select.width / 2, 600, @ja_apply_select) if @select == 2
+        Window.draw_font(15, 400, 'オンリョウ', Font.new(48, @Font))
+        Window.draw(Window.width / 2 - @ja_apply_normal.width / 2, 500, @ja_apply_normal) if @select != 2
+        Window.draw(Window.width / 2 - @ja_apply_select.width / 2, 500, @ja_apply_select) if @select == 2
 
-        Window.draw(Window.width / 2 - @ja_delete_normal.width / 2, 800, @ja_delete_normal) if @select != 3
-        Window.draw(Window.width / 2 - @ja_delete_select.width / 2, 800, @ja_delete_select) if @select == 3
+        Window.draw(Window.width / 2 - @ja_delete_normal.width / 2, 650, @ja_delete_normal) if @select != 3
+        Window.draw(Window.width / 2 - @ja_delete_select.width / 2, 650, @ja_delete_select) if @select == 3
       end
 
       case @select
       when 0
-        Window.draw(700, 312, @arrow_left)
-        Window.draw(1200, 312, @arrow_right)
+        Window.draw(Window.width / 2 + 15, 312, @arrow_left)
+        Window.draw(Window.width - 35, 312, @arrow_right)
       when 1
-        Window.draw(700, 412, @arrow_left) if @volume > 0
-        Window.draw(1200, 412, @arrow_right) if @volume < 5
+        Window.draw(Window.width / 2 + 15, 412, @arrow_left) if @volume > 0
+        Window.draw(Window.width - 35, 412, @arrow_right) if @volume < 5
       end
     end
 

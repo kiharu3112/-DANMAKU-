@@ -28,25 +28,26 @@ module Scene
       if Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE) || Input.pad_push?(5)
         @click_sound.play.set_volume($volume)
         @is_finish = true
+        $health = 100
         @next_scene = Scene::Stages::Stage1.new if @select == 0
         @next_scene = Scene::Stages::Stage_endless.new if @select == 1
       end
 
       if $lang == "en"
         if @select.zero?
-          Window.draw(150, 200, @en_story_select)
-          Window.draw(Window.width - 550, 200, @en_endless_normal)
+          Window.draw(50, 100, @en_story_select)
+          Window.draw(Window.width / 2 + 50, 100, @en_endless_normal)
         else
-          Window.draw(150, 200, @en_story_normal)
-          Window.draw(Window.width - 550, 200, @en_endless_select)
+          Window.draw(50, 100, @en_story_normal)
+          Window.draw(Window.width / 2 + 50, 100, @en_endless_select)
         end
       else
         if @select.zero?
-          Window.draw(150, 200, @ja_story_select)
-          Window.draw(Window.width - 550, 200, @ja_endless_normal)
+          Window.draw(50, 100, @ja_story_select)
+          Window.draw(Window.width / 2 + 50, 100, @ja_endless_normal)
         else
-          Window.draw(150, 200, @ja_story_normal)
-          Window.draw(Window.width - 550, 200, @ja_endless_select)
+          Window.draw(50, 100, @ja_story_normal)
+          Window.draw(Window.width / 2 + 55, 100, @ja_endless_select)
         end
       end
 

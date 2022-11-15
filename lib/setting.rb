@@ -1,6 +1,6 @@
 module Setting
-  Window.width = 1280
-  Window.height = 960
+  Window.width = 1024
+  Window.height = 768
 
 
   DEFAULT_FONT_SIZE = 24
