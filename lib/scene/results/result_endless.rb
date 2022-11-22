@@ -7,10 +7,6 @@ module Scene
         @lose_background = Image.load("#{$path}/lib/images/result/zero_destroyed.png")
         @next_scene = Scene::NameInput.new
       end
-
-      def game
-        super
-      end
     end
   end
 end

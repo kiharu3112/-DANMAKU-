@@ -26,7 +26,7 @@ module Fixture
         @bullets << Player_Gun1.new(x + 43, y)
         @bullets << Player_Gun2.new(x + 5, y)
         @bullets << Player_Gun3.new(x + 43, y)
-        @shot_sound.play
+        @shot_sound.play.set_volume($volume)
       end
       image
       move
@@ -46,18 +46,31 @@ module Fixture
     end
 
     def move
-      if Input.key_down?(K_W) || @input.include?(2) || @input.include?(22)
-        self.y -= 5
-      elsif Input.key_down?(K_S) || @input.include?(3) || @input.include?(23)
-        self.y += 5
-      end
-      if Input.key_down?(K_A) || @input.include?(0) || @input.include?(20)
-        self.x -= 8
-      elsif Input.key_down?(K_D) || @input.include?(1) || @input.include?(21)
-        self.x += 8
+      if Input.key_down?(K_SPACE) || @input.include?(5)
+        if Input.key_down?(K_W) || @input.include?(2) || @input.include?(22)
+          self.y -= 4
+        elsif Input.key_down?(K_S) || @input.include?(3) || @input.include?(23)
+          self.y += 4
+        end
+        if Input.key_down?(K_A) || @input.include?(0) || @input.include?(20)
+          self.x -= 6
+        elsif Input.key_down?(K_D) || @input.include?(1) || @input.include?(21)
+          self.x += 6
+        end
+      else
+        if Input.key_down?(K_W) || @input.include?(2) || @input.include?(22)
+          self.y -= 5
+        elsif Input.key_down?(K_S) || @input.include?(3) || @input.include?(23)
+          self.y += 5
+        end
+        if Input.key_down?(K_A) || @input.include?(0) || @input.include?(20)
+          self.x -= 8
+        elsif Input.key_down?(K_D) || @input.include?(1) || @input.include?(21)
+          self.x += 8
+        end
       end
       self.y = Window.height - @image_height if self.y > Window.height - @image_height
-      self.y = 0 if self.y.negative?
+      self.y = 140 if self.y < 140
       self.x = Window.width - @image_width if self.x > Window.width - @image_width
       self.x = 0 if self.x.negative?
     end

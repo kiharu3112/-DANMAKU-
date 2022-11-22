@@ -3,6 +3,7 @@ module Scene
     class Stage1 < Scene::Stages::Stage
       def initialize
         super
+        $health = 100
         @carrier = Image.load("#{$path}/lib/images/stages/Carrier.png")
         @next_scene = Scene::Results::Result1.new
       end
@@ -31,25 +32,29 @@ module Scene
 
       def game
         super
-        if (@enemies.count <= 0  && @count > 500) || $health <= 0
+        if (@enemies.count <= 0  && @count > 900) || $health <= 0
           @scene = :end
           @player.image = @player.normal_image
         end
         case @count
         when 0
-          @enemies << Enemy_1.new(Window.width / 4, -200)
-          @enemies << Enemy_1.new(Window.width / 2, -150)
-          @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+          @enemies << Enemy_1.new(Window.width / 4, -150)
+          @enemies << Enemy_1.new(Window.width / 2, -100)
+          @enemies << Enemy_1.new(Window.width / 4 * 3, -150)
         when 450
-          @enemies << Enemy_1.new(Window.width / 4, -200)
-          @enemies << Enemy_1.new(Window.width / 2, -150)
-          @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
-          @items << Repaire_Box.new(rand(200..900), -20)
-
+          @enemies << Enemy_1.new(Window.width / 4, - 150)
+          @enemies << Enemy_1.new(Window.width / 2, - 100)
+          @enemies << Enemy_1.new(Window.width / 4 * 3, -150)
+        when 500
+          @enemies << Enemy_1.new(Window.width / 4, - 150)
+          @enemies << Enemy_1.new(Window.width / 2, - 100)
+          @enemies << Enemy_1.new(Window.width / 4 * 3, -150)
         when 900
-          @enemies << Enemy_1.new(Window.width / 4, -200)
+          @enemies << Enemy_1.new(Window.width / 2 + 400, - 250)
+          @enemies << Enemy_1.new(Window.width / 2 + 200, - 200)
           @enemies << Enemy_1.new(Window.width / 2, -150)
-          @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+          @enemies << Enemy_1.new(Window.width / 2 - 200, - 200)
+          @enemies << Enemy_1.new(Window.width / 2 - 400, - 250)
         end
       end
     end

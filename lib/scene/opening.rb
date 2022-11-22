@@ -6,7 +6,6 @@ class Scene::Opening < Scene::Base
     @touch_sound = Sound.new("#{$path}/lib/sounds/title_button_touch.wav")
     @click_sound = Sound.new("#{$path}/lib/sounds/title_button_click.wav")
     @select_y = 0
-    $health = 100
   end
 
   def update
@@ -46,7 +45,6 @@ class Scene::Opening < Scene::Base
     case @select_y
     when 0
       @next_scene = Scene::Select_Stage.new
-      $health = 100
       $score = 0
     when 1
       @next_scene = Scene::Ranking.new

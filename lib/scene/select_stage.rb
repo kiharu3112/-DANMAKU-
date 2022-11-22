@@ -28,7 +28,6 @@ module Scene
       if Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE) || Input.pad_push?(5)
         @click_sound.play.set_volume($volume)
         @is_finish = true
-        $health = 100
         @next_scene = Scene::Stages::Stage1.new if @select == 0
         @next_scene = Scene::Stages::Stage_endless.new if @select == 1
       end

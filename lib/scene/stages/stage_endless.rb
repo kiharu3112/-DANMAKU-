@@ -3,6 +3,7 @@ module Scene
     class Stage_endless < Scene::Stages::Stage
       def initialize
         super
+        $health = 100
         @fase = 0
       end
 
@@ -68,6 +69,7 @@ module Scene
             @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
             @items << Repaire_Box.new(rand(200..900), -20)
           when 1800
+            @items << Repaire_Box.new(rand(100..Window.width - 100), -20)
             @count = -1
             @fase = 2
           end
@@ -90,6 +92,7 @@ module Scene
           when 1000
             @count = -1
             @fase = 3
+            @items << Repaire_Box.new(rand(100..Window.width - 100), -20)
           end
         when 3
           case @count
@@ -113,6 +116,7 @@ module Scene
           when 900
             @fase = 0
             @count = -1
+            @items << Repaire_Box.new(rand(100..Window.width - 100), -20)
           end
         end
       end

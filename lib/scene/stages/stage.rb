@@ -9,7 +9,12 @@ module Scene
         @scene = :start
         @player = Fixture::Player.new
         @enemy_bullet = []
+        @click_sound = Sound.new("#{$path}/lib/sounds/title_button_click.wav")
         @background = Image.load("#{$path}/lib/images/stages/Sea.png")
+        $bgm.stop
+        $bgm.dispose
+        $bgm = Sound.new("#{$path}/lib/sounds/boss_bgm.mid")
+        $bgm.play
       end
 
       def update
@@ -38,7 +43,6 @@ module Scene
         #############################l############################################
         @enemies.each { |n| n.update }
         @enemies.delete_if { |n| n.health <= 0 }
-
 
         @enemy_bullet.each do |n|
           if n === @player
@@ -79,6 +83,16 @@ module Scene
               @enemy_bullet << Enemy_2_Gun_7.new(n.x + 40, n.y + 30)
               @enemy_bullet << Enemy_2_Gun_4.new(n.x + 3, n.y + 30)
               @enemy_bullet << Enemy_2_Gun_5.new(n.x + 40, n.y + 30)
+            end
+          elsif n.name == "Enemy_3"
+            if n.fire1
+              20.times do |t|
+                @enemy_bullet << Bullet_3.new(n.x + n.image.width / 2, n.y + n.image.height / 2, t * 9)
+              end
+            end
+            if n.fire2
+              radian = atan2(@player.y - n.y, @player.x - n.x)  % 360
+              @enemy_bullet << Bullet_3.new(n.x + n.image.width / 2, n.y + n.image.height / 2, radian)
             end
           end
         end

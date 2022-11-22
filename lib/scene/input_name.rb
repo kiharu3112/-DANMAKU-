@@ -36,6 +36,9 @@ module Scene
         if @name.count > 0
           @is_finish = true
           add_data
+          $bgm.stop
+          $bgm = Sound.new("#{$path}/lib/sounds/bgm_1.mid")
+          $bgm.play
         end
       else
         if @name.count <= 16 && n != nil

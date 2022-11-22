@@ -1,7 +1,7 @@
-
 require 'dxruby'
 require 'json'
 require 'time'
+include Math
 Dir[
   'lib/*.rb',
   'lib/fixtures/stage/*.rb',
@@ -14,7 +14,6 @@ Dir[
   require_relative file
 end
 $path = __dir__
-$lnag = "ja"
 $score = 0
 Font.install("#{$path}/lib/fixtures/font/x8y12pxTheStrongGamer.ttf")
 SceneManager.new.start

@@ -25,6 +25,7 @@ module Scene
           @enemies << Enemy_1.new(Window.width / 4, -200)
           @enemies << Enemy_1.new(Window.width / 2, -150)
           @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+          @items << Repaire_Box.new(rand(100..Window.width - 100), -20)
         when 1100
           @enemies << Enemy_1.new(Window.width / 4, -200)
           @enemies << Enemy_2.new(Window.width / 2, -150)
@@ -33,6 +34,7 @@ module Scene
           @enemies << Enemy_1.new(Window.width / 4, -200)
           @enemies << Enemy_1.new(Window.width / 2, -150)
           @enemies << Enemy_1.new(Window.width / 4 * 3, -200)
+          @items << Repaire_Box.new(rand(100..Window.width - 100), -20)
         when 1800
           @enemies << Enemy_1.new(Window.width / 4, -200)
           @enemies << Enemy_1.new(Window.width / 2, -150)

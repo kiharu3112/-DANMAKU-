@@ -3,6 +3,8 @@ class SceneManager
     @scene = Scene::Opening.new
     darklategrey = [34, 43, 56]
     Window.bgcolor = darklategrey
+    $bgm = Sound.new("#{$path}/lib/sounds/opening.mid")
+    $bgm.play
   end
 
   def start
