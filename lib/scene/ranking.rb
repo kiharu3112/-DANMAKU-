@@ -39,7 +39,7 @@ module Scene
 
     def update
       super
-      show_cat(@count) if @count < 100
+      show_cat(@count) if @count < 80
       show_rank if @count > 100
 
       if @count == 100
@@ -71,7 +71,7 @@ module Scene
       when count < 100
         Window.draw_font(100, Window.height / 3 , "Loading Data ...", Font.new(46, @Font))
       end
-      bar = Array.new(100, " ")
+      bar = Array.new(80, " ")
       count.times{ |n|  bar[n] = "#" }
       Window.draw_font(20, Window.height / 2 - 10, "[#{bar.join}]", Font.new(18, @Font))
     end
@@ -100,7 +100,7 @@ module Scene
             Window.draw_font(Window.width / 8, Window.height / 5 + 130 * n + 100, "#{n + 1}   #{@data["ranking"][n]["name"]}  スコア:#{@data["ranking"][n]["score"]}\n       日時:#{@data["ranking"][n]["time"]}", Font.new(40, @Font))
           end
         else
-          Window.draw_font(Window.width / 2 - 100, Window.height / 2 - 100,"データなし", Font.new(48, @Font))
+          Window.draw_font(Window.width / 2 - 65, Window.height / 2 - 100,"データなし", Font.new(48, @Font))
         end
       end
     end

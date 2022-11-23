@@ -8,39 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="変更">
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_3.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_3_bullet.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sounds/enemy_shot1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sounds/enemy_shot2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sounds/opening.mid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sounds/shot2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sounds/shot3.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/sounds/win_bgm.mid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/SceneManager.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/SceneManager.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/player.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_1.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/enemy/fighter_lightning_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_lightning_fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/images/enemy/fighter_lightning_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/images/stages/fighter_lightning_normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result1.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result3.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result4.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result4.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/stage/Enemy_3.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/results/result6.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result6.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/results/result_endless.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result_endless.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/select_stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/select_stage.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage1.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage1.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage2.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage3.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage4.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage4.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage5.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage5.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage6.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage6.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage_endless.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage_endless.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sounds/bgm_1.mid" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sounds/bgm_1.mid" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

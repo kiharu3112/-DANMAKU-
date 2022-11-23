@@ -30,6 +30,7 @@ module Scene
         @is_finish = true
         @next_scene = Scene::Stages::Stage1.new if @select == 0
         @next_scene = Scene::Stages::Stage_endless.new if @select == 1
+        $health = 100
       end
 
       if $lang == "en"

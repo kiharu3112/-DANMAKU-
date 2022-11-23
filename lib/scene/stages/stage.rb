@@ -13,7 +13,7 @@ module Scene
         @background = Image.load("#{$path}/lib/images/stages/Sea.png")
         $bgm.stop
         $bgm.dispose
-        $bgm = Sound.new("#{$path}/lib/sounds/boss_bgm.mid")
+        $bgm = Sound.new("#{$path}/lib/sounds/bgm_1.mid")
         $bgm.play
       end
 
@@ -93,6 +93,11 @@ module Scene
             if n.fire2
               radian = atan2(@player.y - n.y, @player.x - n.x)  % 360
               @enemy_bullet << Bullet_3.new(n.x + n.image.width / 2, n.y + n.image.height / 2, radian)
+            end
+            if n.fire3
+              30.times do |t|
+                @enemy_bullet << Bullet_3.new(n.x + n.image.width / 2, n.y + n.image.height / 2, t * 6)
+              end
             end
           end
         end
