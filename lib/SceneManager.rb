@@ -4,7 +4,7 @@ class SceneManager
     darklategrey = [34, 43, 56]
     Window.bgcolor = darklategrey
     $bgm = Sound.new("#{$path}/lib/sounds/opening.mid")
-    $bgm.play
+    $bgm.play.set_volume($volume)
   end
 
   def start

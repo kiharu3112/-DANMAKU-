@@ -50,8 +50,8 @@ class Scene::Opening < Scene::Base
       @next_scene = Scene::Ranking.new
     when 2
       @next_scene = Scene::Option.new
-    when 2
-      @next_scene = Scene::Help.new
+    when 3
+      @next_scene = Scene::Guide.new
     when 4
       @next_scene = nil
     else
