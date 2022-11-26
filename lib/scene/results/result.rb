@@ -15,7 +15,7 @@ module Scene
       def update
         super
         @score_count += 1 if @score_count < $score
-        win if $health >= 0
+        win if $health > 0
         lose if $health <= 0
       end
 
@@ -25,9 +25,7 @@ module Scene
         Window.draw(0, 0, @win_background)
         Window.draw_font(Window.width / 2 - 170, Window.height / 2  - 60, "SCORE IS : #{@score_count}", Font.new(48, @Font), option={ color:@gold})
         Window.draw_font(Window.width / 2 - 330, Window.height / 2  - 330, "Stage Clear!", Font.new(100, @Font), option={ color:@gold})
-        p = @next_scene.to_s
-        print "\r p = #{p} next_scene = #{@next_scene} #{p =~ /.NameInput./}"
-        if /.NameInput./ =~ p
+        if /.NameInput./ =~ @next_scene.to_s
           Window.draw(Window.width / 2 - 240, Window.height / 3 * 2 + 35, Image.new(510, 3, @gold)) if @select == 0
           Window.draw_font(Window.width / 2 - 240, Window.height / 3 * 2 - 30, ">>Next Scene", Font.new(64, @Font), option={ color:@gold})
           if @count == 2
@@ -35,6 +33,7 @@ module Scene
             $bgm.dispose
             $bgm = Sound.new("#{$path}/lib/sounds/win_bgm.mid")
             $bgm.play.set_volume($volume)
+            puts "sound"
           end
         else
           Window.draw_font(Window.width / 2 - 100, Window.height / 3 * 2 + 100, "Retire", Font.new(48, @Font), option={ color:@gold})
@@ -55,7 +54,6 @@ module Scene
           @next_scene = Scene::Opening.new
           @is_finish = true
           if @endless
-            puts "true"
             @next_scene = Scene::NameInput.new 
             @next_scene.rank = true
           end

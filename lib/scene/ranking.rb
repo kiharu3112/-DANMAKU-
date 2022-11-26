@@ -101,8 +101,8 @@ module Scene
         if @data["clears"].count > 0
           Window.draw_font(Window.width / 2 - 150, Window.height - 200 - @scroll, "Clears!", Font.new(64, @Font))
           @data["clears"].count.times do |n|
-          Window.draw_font(Window.width / 10, Window.height - 100 + 110 * n - @scroll, "#{@data["clears"][n]["name"]}", Font.new(40, @Font))
-          Window.draw_font(Window.width / 10, Window.height - 135 + 110 * n - @scroll, "#{@data["clears"][n]["time"]}", Font.new(40, @Font))
+          Window.draw_font(300, Window.height - 100 + 110 * n - @scroll, "#{@data["clears"][n]["name"]}", Font.new(40, @Font))
+          Window.draw_font(300, Window.height - 135 + 110 * n - @scroll, "#{@data["clears"][n]["time"]}", Font.new(40, @Font))
           end
         end
       else
@@ -117,7 +117,13 @@ module Scene
         else
           Window.draw_font(Window.width / 2 - 65, Window.height / 2 - 100 - @scroll,"データなし", Font.new(48, @Font))
         end
-        Window.draw_font(Window.width / 2 - 150, Window.height - 200 - @scroll, "エースパイロット", Font.new(64, @Font))
+        if @data["clears"].count > 0
+          Window.draw_font(Window.width / 2 - 150, Window.height - 200 - @scroll, "エースパイロット", Font.new(64, @Font))
+          @data["clears"].count.times do |n|
+          Window.draw_font(300, Window.height - 100 + 110 * n - @scroll, "#{@data["clears"][n]["name"]}", Font.new(40, @Font))
+          Window.draw_font(300, Window.height - 135 + 110 * n - @scroll, "#{@data["clears"][n]["time"]}", Font.new(40, @Font))
+          end
+        end
       end
     end
   end

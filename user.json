@@ -3,10 +3,13 @@
 
   ],
   "clears": [
-
+    {
+      "name": "fff4",
+      "time": "2022/11/26 9:47"
+    }
   ],
   "setting": {
-    "lang": "en",
+    "lang": "ja",
     "volume": 210
   }
 }
