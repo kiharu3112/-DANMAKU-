@@ -98,7 +98,7 @@ module Scene
         else
           Window.draw_font(Window.width / 2 - 100, Window.height / 2 - 100 - @scroll,"No DATA", Font.new(48, @Font))
         end
-        if @data["clears"].count
+        if @data["clears"].count > 0
           Window.draw_font(Window.width / 2 - 150, Window.height - 200 - @scroll, "Clears!", Font.new(64, @Font))
           @data["clears"].count.times do |n|
           Window.draw_font(Window.width / 10, Window.height - 100 + 110 * n - @scroll, "#{@data["clears"][n]["name"]}", Font.new(40, @Font))

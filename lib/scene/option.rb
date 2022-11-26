@@ -210,6 +210,7 @@ module Scene
       File.open('user.json', 'r') do |file|
         @data = JSON.load(file)
         @data["ranking"] = []
+        @data["clears"] = []
         file.close
       end
       File.open('user.json', 'w') do |file|
