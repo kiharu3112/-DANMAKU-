@@ -28,9 +28,13 @@ module Scene
       if Input.key_push?(K_RETURN) || Input.key_push?(K_SPACE) || Input.pad_push?(5)
         @click_sound.play.set_volume($volume)
         @is_finish = true
-        @next_scene = Scene::Stages::Stage1.new if @select == 0
+        @next_scene = Scene::Stages::Stage6.new if @select == 0
         @next_scene = Scene::Stages::Stage_endless.new if @select == 1
         $health = 100
+        $bgm.stop
+        $bgm.dispose
+        $bgm = Sound.new("#{$path}/lib/sounds/bgm_1.mid")
+        $bgm.play
       end
 
       if $lang == "en"

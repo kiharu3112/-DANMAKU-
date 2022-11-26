@@ -1,16 +1,13 @@
 module Scene
   class NameInput < Scene::Base
-    include Fixture
+    include Fixture # if rank is true, add ranking else add clears
+    attr_accessor :rank
     def initialize
       super
+      @rank = false
       @name = []
       @vertical_line = Image.new(5, 80, C_WHITE)
       @beside_line = Image.new(750, 5, C_WHITE)
-      File.open("user.json") do |file|
-        @data = JSON.load(file)
-      end
-      @time = Time.now
-      @next_scene = Scene::Ranking.new
     end
 
     def update
@@ -35,8 +32,10 @@ module Scene
       when "enter"
         if @name.count > 0
           @is_finish = true
+          @next_scene = Scene::Ranking.new
           add_data
           $bgm.stop
+          $bgm.dispose
           $bgm = Sound.new("#{$path}/lib/sounds/bgm_1.mid")
           $bgm.play
         end
@@ -48,21 +47,35 @@ module Scene
     end
 
     def add_data
-      @userdata = {
-        "name":@name.join,
-        "score":$score,
-        "time":"#{@time.year}/#{@time.month}/#{@time.day} #{@time.hour}:#{@time.min == 0 ? '00' : @time.min}"
-      }
-      5.times do |n|
-        if @data["ranking"][n] == nil
-          @data["ranking"].insert(n,@userdata)
-          break
-        end
-        if @data["ranking"][n]["score"] < $score || @data["ranking"][n]["name"] == ""
-          @data["ranking"].insert(n,@userdata)
-          break
-        end
+      File.open("user.json") do |file|
+        @data = JSON.load(file)
       end
+      @time = Time.now
+
+      if @rank
+        @userdata = {
+          "name":@name.join,
+          "score":$score,
+          "time":"#{@time.year}/#{@time.month}/#{@time.day} #{@time.hour}:#{@time.min == 0 ? '00' : @time.min}"
+        }
+        5.times do |n|
+          if @data["ranking"][n] == nil
+            @data["ranking"].insert(n,@userdata)
+            break
+          end
+          if @data["ranking"][n]["score"] < $score || @data["ranking"][n]["name"] == ""
+            @data["ranking"].insert(n,@userdata)
+            break
+          end
+        end
+      else
+        @userdata = {
+          "name":@name.join,
+          "time":"#{@time.year}/#{@time.month}/#{@time.day} #{@time.hour}:#{@time.min == 0 ? '00' : @time.min}"
+        }
+        @data["clears"] << @userdata
+      end
+
       File.open("user.json", "w") do |file|
         @data = JSON.pretty_generate(@data)
         file.puts(@data)

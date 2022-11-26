@@ -47,25 +47,25 @@ module Fixture
 
     def move
       if Input.key_down?(K_SPACE) || @input.include?(5)
-        if Input.key_down?(K_W) || @input.include?(2) || @input.include?(22)
+        if Input.key_down?(K_W) || @input.include?(2) || @input.include?(22) || Input.key_down?(K_UPARROW)
           self.y -= 4
-        elsif Input.key_down?(K_S) || @input.include?(3) || @input.include?(23)
+        elsif Input.key_down?(K_S) || @input.include?(3) || @input.include?(23) || Input.key_down?(K_DOWNARROW)
           self.y += 4
         end
-        if Input.key_down?(K_A) || @input.include?(0) || @input.include?(20)
+        if Input.key_down?(K_A) || @input.include?(0) || @input.include?(20) || Input.key_down?(K_LEFTARROW)
           self.x -= 6
-        elsif Input.key_down?(K_D) || @input.include?(1) || @input.include?(21)
+        elsif Input.key_down?(K_D) || @input.include?(1) || @input.include?(21) || Input.key_down?(K_RIGHTARROW)
           self.x += 6
         end
       else
-        if Input.key_down?(K_W) || @input.include?(2) || @input.include?(22)
+        if Input.key_down?(K_W) || @input.include?(2) || @input.include?(22) || Input.key_down?(K_UPARROW)
           self.y -= 5
-        elsif Input.key_down?(K_S) || @input.include?(3) || @input.include?(23)
+        elsif Input.key_down?(K_S) || @input.include?(3) || @input.include?(23) || Input.key_down?(K_DOWNARROW)
           self.y += 5
         end
-        if Input.key_down?(K_A) || @input.include?(0) || @input.include?(20)
+        if Input.key_down?(K_A) || @input.include?(0) || @input.include?(20) || Input.key_down?(K_LEFTARROW)
           self.x -= 8
-        elsif Input.key_down?(K_D) || @input.include?(1) || @input.include?(21)
+        elsif Input.key_down?(K_D) || @input.include?(1) || @input.include?(21) || Input.key_down?(K_RIGHTARROW)
           self.x += 8
         end
       end

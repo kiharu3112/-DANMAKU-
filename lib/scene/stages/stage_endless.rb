@@ -5,13 +5,15 @@ module Scene
         super
         $health = 100
         @fase = 0
+        @endless = true
       end
 
       def game
         super
+        Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @Font))
         if $health <= 0
           @is_finish = true
-          @next_scene = Scene::NameInput.new
+          @next_scene = Scene::Results::Result_Endless.new
         end
         case @fase
         when 0
@@ -120,7 +122,6 @@ module Scene
           end
         end
       end
-
     end
   end
 end

@@ -8,22 +8,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ee0b4c-4f19-4159-bc26-20cbf504cbdd" name="変更" comment="変更">
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/en_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/en_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/en_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/en_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/en_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/en_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/ja_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/ja_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/ja_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/ja_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/ja_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/images/guide/ja_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/SceneManager.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/SceneManager.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/guide.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/guide.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scene/opening.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/opening.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fixtures/player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fixtures/player.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/input_name.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/input_name.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/ranking.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/ranking.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result6.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result6.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/results/result_endless.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/results/result_endless.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/select_stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/select_stage.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage2.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage2.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage3.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage3.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage4.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage4.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage5.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage5.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage6.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage6.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scene/stages/stage_endless.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scene/stages/stage_endless.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/user.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,23 +80,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "false",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "C:/Users/kijiharu/Desktop/ruby-con-game/lib/images/guide",
-    "ruby.rails.projectView.checked": "true",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "two.files.diff.last.used.file": "C:/Users/kijiharu/Desktop/for_ruby-con/lib/scene/guid.rb"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kijiharu/Desktop/ruby-con-game/lib/images/guide&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/kijiharu/Desktop/for_ruby-con/lib/scene/guid.rb&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kijiharu\Desktop\ruby-con-game\lib\images\guide" />

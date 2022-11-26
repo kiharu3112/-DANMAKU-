@@ -1,11 +1,37 @@
 {
   "ranking": [
+    {
+      "name": "oesf",
+      "score": 0,
+      "time": "2022/11/24 18:48"
+    },
+    {
+      "name": "akesihrtw",
+      "score": 0,
+      "time": "2022/11/24 19:32"
+    },
+    {
+      "name": ",eksrhta",
+      "score": 0,
+      "time": "2022/11/24 19:33"
+    }
+  ],
+  "clears": [
+    {
+      "name": "ooj@",
+      "time": "2022/11/24 18:55"
+    },
+    {
+      "name": "ppppp",
+      "time": "2022/11/26 8:56"
+    },
+    {
+      "name": "JJJ",
+      "time": "2022/11/26 9:26"
+    }
   ],
   "setting": {
-    "lang": "ja",
+    "lang": "en",
     "volume": 210
-  },
-  "clears": [
-
-  ]
+  }
 }

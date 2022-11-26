@@ -4,7 +4,6 @@ module Scene
       def initialize
         super
         @next_scene = Scene::Results::Result2.new
-        @enemy_num = 12
       end
       def game
         super

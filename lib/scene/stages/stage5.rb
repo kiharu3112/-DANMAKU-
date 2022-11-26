@@ -4,11 +4,10 @@ module Scene
       def initialize
         super
         @next_scene = Scene::Results::Result5.new
-        @enemy_num = 9
       end
       def game
         super
-        if (@enemies.count <= 0  && @count > 500) || $health <= 0
+        if (@enemies.count <= 0  && @count > 1800) || $health <= 0
           @scene = :end
           @player.image = @player.normal_image
         end

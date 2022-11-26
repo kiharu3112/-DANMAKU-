@@ -11,10 +11,7 @@ module Scene
         @enemy_bullet = []
         @click_sound = Sound.new("#{$path}/lib/sounds/title_button_click.wav")
         @background = Image.load("#{$path}/lib/images/stages/Sea.png")
-        $bgm.stop
-        $bgm.dispose
-        $bgm = Sound.new("#{$path}/lib/sounds/bgm_1.mid")
-        $bgm.play
+
       end
 
       def update
@@ -37,7 +34,6 @@ module Scene
       def game
         background_move_draw_2
         @player.update
-        Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @Font))
         Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @Font))
 
         #############################l############################################

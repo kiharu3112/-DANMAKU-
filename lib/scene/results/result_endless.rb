@@ -6,6 +6,8 @@ module Scene
         @win_background = Image.load("#{$path}/lib/images/result/win-picture01.jpg")
         @lose_background = Image.load("#{$path}/lib/images/result/zero_destroyed.png")
         @next_scene = Scene::NameInput.new
+        @next_scene.rank = true
+        @endless = true
       end
     end
   end
