@@ -55,22 +55,44 @@ module Scene
     end
 
     def show_cat(count)
-      case
-      when count < 15
-        Window.draw_font(100, Window.height / 3 , "Loading Data", Font.new(46, @Font))
-      when count < 30
-        Window.draw_font(100, Window.height / 3 , "Loading Data .", Font.new(46, @Font))
-      when count < 45
-        Window.draw_font(100, Window.height / 3 , "Loading Data ..", Font.new(46, @Font))
-      when count < 60
-        Window.draw_font(100, Window.height / 3 , "Loading Data ...", Font.new(46, @Font))
-      when count < 75
-        Window.draw_font(100, Window.height / 3 , "Loading Data ." , Font.new(46, @Font))
-      when count < 90
-        Window.draw_font(100, Window.height / 3 , "Loading Data ..", Font.new(46, @Font))
-      when count < 100
-        Window.draw_font(100, Window.height / 3 , "Loading Data ...", Font.new(46, @Font))
+      if $lang == "en"
+        case
+       when count < 15
+          Window.draw_font(100, Window.height / 3 , "Loading Data", Font.new(46, @Font))
+        when count < 30
+          Window.draw_font(100, Window.height / 3 , "Loading Data .", Font.new(46, @Font))
+        when count < 45
+         Window.draw_font(100, Window.height / 3 , "Loading Data ..", Font.new(46, @Font))
+       when count < 60
+         Window.draw_font(100, Window.height / 3 , "Loading Data ...", Font.new(46, @Font))
+       when count < 75
+         Window.draw_font(100, Window.height / 3 , "Loading Data ." , Font.new(46, @Font))
+       when count < 90
+         Window.draw_font(100, Window.height / 3 , "Loading Data ..", Font.new(46, @Font))
+       when count < 100
+         Window.draw_font(100, Window.height / 3 , "Loading Data ...", Font.new(46, @Font))
+       end
+      else
+       case
+       when count < 15
+          Window.draw_font(100, Window.height / 3 ,"ヨミコミチュウ", Font.new(46, @Font))
+        when count < 30
+          Window.draw_font(100, Window.height / 3 ,"ヨミコミチュウ .", Font.new(46, @Font))
+        when count < 45
+         Window.draw_font(100, Window.height / 3 , "ヨミコミチュウ ..", Font.new(46, @Font))
+       when count < 60
+         Window.draw_font(100, Window.height / 3 , "ヨミコミチュウ ...", Font.new(46, @Font))
+       when count < 75
+         Window.draw_font(100, Window.height / 3 , "ヨミコミチュウ ." , Font.new(46, @Font))
+       when count < 90
+         Window.draw_font(100, Window.height / 3 , "ヨミコミチュウ ..", Font.new(46, @Font))
+       when count < 100
+         Window.draw_font(100, Window.height / 3 , "ヨミコミチュウ ...", Font.new(46, @Font))
+       end
+
       end
+
+
       bar = Array.new(80, " ")
       count.times{ |n|  bar[n] = "#" }
       Window.draw_font(20, Window.height / 2 - 10, "[#{bar.join}]", Font.new(18, @Font))

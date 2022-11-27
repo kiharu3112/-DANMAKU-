@@ -34,8 +34,8 @@ module Scene
       def game
         background_move_draw_2
         @player.update
-        Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @Font))
-
+        Window.draw_font(Window.width - 300, 150, "health :#{$health}", Font.new(36, @Font)) if $lang == "en"
+        Window.draw_font(Window.width - 300, 150, "タイリョク:#{$health}", Font.new(36, @Font)) if $lang == "ja"
         #############################l############################################
         @enemies.each { |n| n.update }
         @enemies.delete_if { |n| n.health <= 0 }
@@ -53,6 +53,7 @@ module Scene
             if n.name == "repair"
               @player.repair
               n.hit = true
+              @click_sound.play
             end
           end
         end

@@ -1,12 +1,11 @@
 class SceneManager
   def initialize
-    @scene = Scene::Opening.new
+    @scene = Scene::NameInput.new
     darklategrey = [34, 43, 56]
     Window.bgcolor = darklategrey
     $bgm = Sound.new("#{$path}/lib/sounds/opening.mid")
-    $bgm.play.set_volume($volume)
+    $bgm.play.set_volume($volume) 
   end
-
   def start
     Window.loop do
       @scene.update

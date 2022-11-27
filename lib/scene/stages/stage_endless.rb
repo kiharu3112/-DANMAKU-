@@ -10,7 +10,8 @@ module Scene
 
       def game
         super
-        Window.draw_font(Window.width - 300, 100, "score : #{$score}", Font.new(36, @Font))
+        Window.draw_font(Window.width - 300, 100, "score  : #{$score}", Font.new(36, @Font)) if $lang == "en"
+        Window.draw_font(Window.width - 300, 100, " スコア : #{$score}", Font.new(36, @Font)) if $lang == "ja"
         if $health <= 0
           @is_finish = true
           @next_scene = Scene::Results::Result_Endless.new

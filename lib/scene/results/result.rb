@@ -33,7 +33,6 @@ module Scene
             $bgm.dispose
             $bgm = Sound.new("#{$path}/lib/sounds/win_bgm.mid")
             $bgm.play.set_volume($volume)
-            puts "sound"
           end
         else
           Window.draw_font(Window.width / 2 - 100, Window.height / 3 * 2 + 100, "Retire", Font.new(48, @Font), option={ color:@gold})
@@ -52,6 +51,10 @@ module Scene
         Window.draw_font(Window.width / 2 - 220, Window.height / 2  - 280, "You down", Font.new(100, @Font), option={ color:@gold})
         if Input.pad_push?(5) || Input.key_push?(K_SPACE) || Input.key_push?(K_RETURN)
           @next_scene = Scene::Opening.new
+          $bgm.stop
+          $bgm.dispose
+          $bgm = Sound.new("#{$path}/lib/sounds/opening.mid")
+          $bgm.play
           @is_finish = true
           if @endless
             @next_scene = Scene::NameInput.new 

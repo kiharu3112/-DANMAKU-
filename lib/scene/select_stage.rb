@@ -31,6 +31,7 @@ module Scene
         @next_scene = Scene::Stages::Stage1.new if @select == 0
         @next_scene = Scene::Stages::Stage_endless.new if @select == 1
         $health = 100
+
         $bgm.stop
         $bgm.dispose
         $bgm = Sound.new("#{$path}/lib/sounds/bgm_1.mid")
