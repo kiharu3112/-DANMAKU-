@@ -1,6 +1,12 @@
 # ruby-con-game
 ## !DANMAKU!
 
+## 動作環境
+以下の環境で動作します
+Windows 10/11
+Ruby 2.7.x
+DXRuby
+
 ## 操作方法
 ```
 ruby main.rb
